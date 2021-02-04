@@ -11,11 +11,11 @@ const linkStyle = {
 	color: '#9AC5C4'
 }
 
-export default function Hero() {
+export default function FeaturedPosts() {
 	return (
 		<div
 			sx={{ 		
-				paddingTop: `1rem`, 				
+				paddingBottom: `10rem`, 				
 			}}
 		>
 			<h1>Sean May</h1>
@@ -31,12 +31,12 @@ export default function Hero() {
 					listStyleType: 'none',
 					display: 'flex',
 					flexDirection: 'row',	
-					paddingTop: '2.5rem',
+					paddingTop: '2.5rem'									
 				}}
 			>
-				<li sx={{paddingRight: `1rem`}}><a href="" target="_blank" rel="noopener noreferrer" style={linkStyle}>Email</a></li>
-				<li sx={{paddingRight: `1rem`}}><a href="" target="_blank" rel="noopener noreferrer" style={linkStyle}>Github</a></li>				
-				<li sx={{paddingRight: `1rem`}}><a href="" target="_blank" rel="noopener noreferrer" style={linkStyle}>Medium</a></li>
+				<li sx={{paddingRight: `1rem`}}><Link to="" style={linkStyle}>Email</Link></li>
+				<li sx={{paddingRight: `1rem`}}><Link to="" style={linkStyle}>Github</Link></li>				
+				<li sx={{paddingRight: `1rem`}}><Link to="" style={linkStyle}>Medium</Link></li>
 			</ul>
 		</div>
 	)

@@ -18,10 +18,14 @@ export default function Header() {
 	return (
 		<header		  
 		  sx={{
+		    maxWidth: '40rem',
+		    mx: 'auto', 
 		    display: 'flex',
 		    alignItems: 'center',
 		    variant: 'styles.header',
-		    paddingTop: '1.5rem'		    
+		    paddingTop: '1.5rem',
+		    p: 2		  
+		    
 		  }}>
 		  <Link to='/'
 		    sx={{
