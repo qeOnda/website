@@ -26,6 +26,7 @@
     "gatsby-plugin-theme-ui": "^0.3.5",
     "gatsby-plugin-typography": "^2.12.0",
     "gatsby-source-filesystem": "^2.10.0",
+    "gatsby-source-strapi": "0.0.12",
     "gatsby-transformer-sharp": "^2.11.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

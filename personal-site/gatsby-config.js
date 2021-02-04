@@ -10,6 +10,16 @@ module.exports = {
       },
     },
     "gatsby-plugin-sharp",
+    {
+      resolve: `gatsby-source-strapi`,
+      options: {
+        apiURL: `http://localhost:1337`,
+        contentTypes: [
+          `test`,
+        ],
+        queryLimit: 1000,
+      },  
+    },
     "gatsby-plugin-emotion",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-theme-ui",
@@ -19,7 +29,6 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
