@@ -1,18 +1,42 @@
 /** @jsx jsx */
 
 import * as React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 import Layout from '../components/Layout'
+import Styled from '@emotion/styled'
 
-import { jsx } from 'theme-ui'
+import { jsx, Grid } from 'theme-ui'
 
-export default function About()  {
+export default function About({ data })  {
   return (
     <Layout>
-      	<div sx={{bg:'primary'}}>
-    		Contrary to popular belief, Lorem Ipsum is not simply random text. <strong>It has roots in a piece of classical</strong> Latin literature from 45 BC
-    	</div>
+	    <Grid	    	
+	    	sx={{	    	
+	    		maxWidth: '40rem',
+	    		mx: 'auto',
+	    		p:2 	          	
+	    	}}
+	    >	
+	    	<h1>Hi I'm Sean1</h1>
+	   	</Grid>	
     </Layout>
   )
 }
+
+
+export const pag = graphql`  
+  query In {
+    allStrapiTest {
+      edges {
+        node {
+          id
+          title
+          date
+          content
+          description
+        }
+      }
+    }
+  }
+`
 

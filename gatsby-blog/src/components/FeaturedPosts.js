@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import React from "react"
-import { Link } from "gatsby"
+import { Link, StaticQuery, graphql } from "gatsby"
 import { jsx } from 'theme-ui'
 
 const linkStyle = {
@@ -19,13 +19,6 @@ export default function FeaturedPosts() {
 			}}
 		>
 			<h1>Sean May</h1>
-			<p
-				sx={{
-					fontSize: 24
-				}}
-			>
-				Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.
-			</p>
 			<ul 
 				sx={{
 					listStyleType: 'none',

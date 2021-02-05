@@ -36,26 +36,36 @@ export default function Header() {
 		  >  
 		    Hello
 		  </Link>
-		  <div sx={{ mx: 'auto' }} />
-		  <Link to='/blog'
-		    sx={{
-		      variant: 'styles.navlink',
-		      p: 2,
-		      color: 'text1'
-		    }}
-		    style={headerStyle}
-		   >
-		    Blog
-		  </Link>
+		  <div sx={{ mx: 'auto' }} />		  
 		  <Link to='/about'
 		    sx={{
 		      variant: 'styles.navlink',
+		      color: 'text1',
+		      p: 2,		      
+		    }}
+		    style={headerStyle}
+		   >
+		    About
+		  </Link>
+		  <Link to='/projects'
+		    sx={{
+		      variant: 'styles.navlink',		      
 		      color: 'text1',
 		      marginLeft: '1rem'
 		    }}
 		    style={headerStyle}
 		   >
-		    About
+		    Projects
+		  </Link>
+		  <Link to='/posts'
+		    sx={{
+		      variant: 'styles.navlink',		      
+		      color: 'text1',
+		      marginLeft: '1rem'
+		    }}
+		    style={headerStyle}
+		   >
+		    Blog
 		  </Link>
 		</header>
 
