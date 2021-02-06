@@ -15,9 +15,9 @@ export default function Article({ data }) {
           p:2             
         }}
       >
-      	<h1>{data.strapiTest.title}</h1>
-        <small sx={{ fontWeight: 'bold' }}>{data.strapiTest.date}</small>
-  			<p sx={{ paddingTop: 2 }} >{data.strapiTest.content}</p>        
+      	<h1>{data.strapiBlog.title}</h1>
+        <small sx={{ fontWeight: 'bold' }}>{data.strapiBlog.date}</small>
+  			<p sx={{ paddingTop: 2 }} >{data.strapiBlog.content}</p>                
       </Box>  
 		</Layout>
 	)
@@ -26,7 +26,7 @@ export default function Article({ data }) {
 
 export const query = graphql`
   query ArticleTemplate($slug: String!) {
-    strapiTest(slug: {eq: $slug}) {
+    strapiBlog(slug: {eq: $slug}) {
       id
       title
       content

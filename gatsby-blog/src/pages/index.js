@@ -50,9 +50,10 @@ export default function Home({ data })  {
                 gridTemplateColumns: 'repeat(auto-fit, minmax(256px, 1fr))',
                 paddingBottom: 4,                  
               }}>
-              {data.allStrapiTest.edges.map(post => (
+              {data.allStrapiBlog.edges.map(post => (
                 <li key={post.node.id}
                   sx={{
+
                   }}>
                   <h3
                     sx={{
@@ -69,8 +70,9 @@ export default function Home({ data })  {
                       }}>
                       {post.node.title}
                     </Link>
-                  </h3>
-                  <small sx={{ fontWeight: 'bold' }}>{post.node.date}</small>
+                  </h3>        
+                  <small sx={{ fontWeight: 'bold',  fontStyle: 'italic', color: 'text1' }}>{post.node.category.name}</small>
+                  
                   <p
                     sx={{
                       m: 0,
@@ -81,6 +83,38 @@ export default function Home({ data })  {
                   </p>
                 </li>
               ))}
+              {data.allStrapiProject.edges.map(post => (
+                <li key={post.node.id}
+                  sx={{
+                  }}>
+                  <h3
+                    sx={{
+                      m: 0,
+                    }}>
+                    <Link to={`/projects/${post.node.slug}`}
+                      sx={{
+                        color: 'inherit',
+                        textDecoration: 'none',
+                        ':hover,:focus': {
+                          color: 'text1',
+                          textDecoration: 'underline',                        
+                        }
+                      }}>
+                      {post.node.title}
+                    </Link>
+                  </h3>
+                  <small sx={{ fontWeight: 'bold',  fontStyle: 'italic', color: 'text1' }}>{post.node.category.name}</small>
+                  
+                  <p
+                    sx={{
+                      m: 0,
+                      textAlign: 'justify',
+                      textJustify: 'inter-word'
+                    }}>
+                    {post.node.description}
+                  </p>                  
+                </li>
+              ))}            
             </ul>
           </Grid> 
         </div>  
@@ -92,7 +126,7 @@ export default function Home({ data })  {
 
 export const pageQuery = graphql`  
   query IndexQuery {
-    allStrapiTest(filter: { Featured: { eq: true }}) {
+    allStrapiBlog(filter: { featured: { eq: true }}) {
     edges {
       node {
         id        
@@ -101,6 +135,26 @@ export const pageQuery = graphql`
         content
         description
         slug
+        category {
+          name
+        }
+        
+      }
+    }
+  }
+    allStrapiProject(filter: { featured: { eq: true }}) {
+    edges {
+      node {
+        id        
+        title
+        date
+        content
+        description
+        slug
+        category {
+          name
+        }
+        
       }
     }
   }

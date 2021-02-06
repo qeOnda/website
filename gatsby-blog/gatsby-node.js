@@ -13,14 +13,13 @@ const makeRequest = (graphql, request) => new Promise((resolve, reject) => {
   )
 });
 
-// Implement the Gatsby API “createPages”. This is called once the
-// data layer is bootstrapped to let plugins create pages from data.
+
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
   
-  const getArticles = makeRequest(graphql, `
+  const getProjects = makeRequest(graphql, `
     {
-      allStrapiTest {
+      allStrapiProject {
         edges {
           node {
             slug
@@ -30,7 +29,30 @@ exports.createPages = ({ actions, graphql }) => {
     }
     `).then(result => {
     // Create pages for each article.
-    result.data.allStrapiTest.edges.forEach(({ node }) => {      
+    result.data.allStrapiProject.edges.forEach(({ node }) => {      
+      createPage({
+        path: `/projects/${node.slug}`,
+        component: path.resolve(`src/templates/project-single.js`),
+        context: {
+          slug: node.slug,
+        },
+      })
+    })
+  });
+
+  const getArticles = makeRequest(graphql, `
+    {
+      allStrapiBlog {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+    }
+    `).then(result => {
+    // Create pages for each article.
+    result.data.allStrapiBlog.edges.forEach(({ node }) => {      
       createPage({
         path: `/posts/${node.slug}`,
         component: path.resolve(`src/templates/article.js`),
@@ -41,6 +63,9 @@ exports.createPages = ({ actions, graphql }) => {
     })
   });
   
-  // Query for articles nodes to use in creating pages.
-  return getArticles;
+  return Promise.all([
+    getArticles,
+    getProjects,
+  ])
+  
 };

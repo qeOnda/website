@@ -25,7 +25,7 @@ export default function Posts({ data })  {
 			    gridGap: 4,
 			    gridTemplateColumns: 'repeat(auto-fit, minmax(256px, 1fr))',			   			    
 			  }}>
-			  {data.allStrapiTest.edges.map(post => (
+			  {data.allStrapiBlog.edges.map(post => (
 			    <li key={post.node.id}
 			      sx={{
 			      }}>			     
@@ -64,7 +64,7 @@ export default function Posts({ data })  {
 
 export const pageQ = graphql`  
   query IndexQ {
-    allStrapiTest {
+    allStrapiBlog {
       edges {
         node {
           id

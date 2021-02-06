@@ -24,19 +24,19 @@ export default function About({ data })  {
 }
 
 
-export const pag = graphql`  
-  query In {
-    allStrapiTest {
-      edges {
-        node {
-          id
-          title
-          date
-          content
-          description
-        }
-      }
-    }
-  }
-`
+// export const pag = graphql`  
+//   query In {
+//     allStrapiTest {
+//       edges {
+//         node {
+//           id
+//           title
+//           date
+//           content
+//           description
+//         }
+//       }
+//     }
+//   }
+// `
 

@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/secondaries",
+      "handler": "secondary.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/secondaries/count",
+      "handler": "secondary.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/secondaries/:id",
+      "handler": "secondary.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/secondaries",
+      "handler": "secondary.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/secondaries/:id",
+      "handler": "secondary.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/secondaries/:id",
+      "handler": "secondary.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
