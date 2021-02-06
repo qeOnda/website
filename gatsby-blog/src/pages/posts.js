@@ -34,7 +34,7 @@ export default function Posts({ data })  {
 			          m: 0,
 			        }}>
 			        
-			        <Link to={`/posts/${post.node.title.replace(/\s+/g, '-')}`}
+			        <Link to={`/posts/${post.node.slug}`}
 			          sx={{
 			            color: 'inherit',
 			            textDecoration: 'none',
@@ -70,15 +70,9 @@ export const pageQ = graphql`
           id
           title
           date
+          slug
           content
-          description
-          photo {
-          childImageSharp {
-            fixed(width: 200, height: 125) {
-              ...GatsbyImageSharpFixed
-            	}
-          	}
-          }
+          description          
         }
       }
     }

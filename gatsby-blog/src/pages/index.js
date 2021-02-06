@@ -58,7 +58,7 @@ export default function Home({ data })  {
                     sx={{
                       m: 0,
                     }}>
-                    <Link to={`/posts/${post.node.title.replace(/\s+/g, '-')}`}
+                    <Link to={`/posts/${post.node.slug}`}
                       sx={{
                         color: 'inherit',
                         textDecoration: 'none',
@@ -100,6 +100,7 @@ export const pageQuery = graphql`
         date
         content
         description
+        slug
       }
     }
   }

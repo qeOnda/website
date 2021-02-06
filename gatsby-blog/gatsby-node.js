@@ -23,21 +23,19 @@ exports.createPages = ({ actions, graphql }) => {
       allStrapiTest {
         edges {
           node {
-            title
+            slug
           }
         }
       }
     }
     `).then(result => {
     // Create pages for each article.
-    result.data.allStrapiTest.edges.forEach(({ node }) => {
-      let tit = node.title
-      string = tit.replace(/\s+/g, '-')
+    result.data.allStrapiTest.edges.forEach(({ node }) => {      
       createPage({
-        path: `/posts/${string}`,
+        path: `/posts/${node.slug}`,
         component: path.resolve(`src/templates/article.js`),
         context: {
-          title: node.title,
+          slug: node.slug,
         },
       })
     })

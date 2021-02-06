@@ -71,14 +71,7 @@ export const pag = graphql`
           title
           date
           content
-          description
-          photo {
-          childImageSharp {
-            fluid(maxWidth: 200) {
-              ...GatsbyImageSharpFluid
-            	}
-          	}
-          }
+          description          
         }
       }
     }

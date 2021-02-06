@@ -25,12 +25,13 @@ export default function Article({ data }) {
 
 
 export const query = graphql`
-  query ArticleTemplate($title: String!) {
-    strapiTest(title: {eq: $title}) {
+  query ArticleTemplate($slug: String!) {
+    strapiTest(slug: {eq: $slug}) {
       id
       title
       content
       date
+      slug
     }
   }
 `

@@ -17,7 +17,8 @@
     },
     "title": {
       "type": "string",
-      "required": true
+      "required": true,
+      "unique": true
     },
     "date": {
       "type": "date"
@@ -26,21 +27,14 @@
       "type": "text",
       "maxLength": 150
     },
-    "photo": {
-      "model": "file",
-      "via": "related",
-      "allowedTypes": [
-        "files",
-        "images",
-        "videos"
-      ],
-      "plugin": "upload",
-      "required": false
-    },
     "Featured": {
       "type": "boolean",
       "default": false,
       "required": false
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
     }
   }
 }
