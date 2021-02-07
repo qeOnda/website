@@ -30,7 +30,8 @@ export default function Home({ data })  {
       </Box>    
       <Box
         sx={{
-          bg:'primary'
+          bg:'primary',
+          p:2
         }}
       >
         <div
@@ -45,10 +46,13 @@ export default function Home({ data })  {
             <ul
               sx={{         
                 listStyle: 'none',
-                display: 'grid',
-                gridGap: 4,
+                display: 'grid',              
                 gridTemplateColumns: 'repeat(auto-fit, minmax(256px, 1fr))',
-                paddingBottom: 4,                  
+                paddingBottom: 4,
+                m: 0,
+                px: 3,
+                py: 4,          
+                gridGap: 3        
               }}>
               {data.allStrapiBlog.edges.map(post => (
                 <li key={post.node.id}
@@ -83,8 +87,7 @@ export default function Home({ data })  {
                   {post.node.categoricals.map(secondary => (
                     <small 
                       sx={{ 
-                        marginRight: 2,
-                        fontWeight: 'bold',  
+                        marginRight: 2,                        
                         fontStyle: 'italic', 
                         color: 'white', 
                         display: 'inline-block', 
@@ -129,8 +132,7 @@ export default function Home({ data })  {
                   {post.node.categoricals.map(secondary => (
                     <small 
                       sx={{ 
-                        marginRight: 2,
-                        fontWeight: 'bold',  
+                        marginRight: 2,                          
                         fontStyle: 'italic', 
                         color: 'white', 
                         display: 'inline-block', 
@@ -165,6 +167,7 @@ export const pageQuery = graphql`
         slug        
         categoricals {
           name
+          id
         }
       }
     }
@@ -180,6 +183,7 @@ export const pageQuery = graphql`
         slug
         categoricals {
           name
+          id
         }
       }
     }

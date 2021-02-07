@@ -21,9 +21,12 @@ export default function Posts({ data })  {
 	    	<ul
 			  sx={{			    
 			    listStyle: 'none',
-			    display: 'grid',
-			    gridGap: 4,
-			    gridTemplateColumns: 'repeat(auto-fit, minmax(256px, 1fr))',			   			    
+			    display: 'grid',			    
+			    gridTemplateColumns: 'repeat(auto-fit, minmax(256px, 1fr))',
+			    m: 0,
+                px: 3,
+                py: 4,          
+                gridGap: 3     			   			    
 			  }}>
 			  {data.allStrapiBlog.edges.map(post => (
 			    <li key={post.node.id}
