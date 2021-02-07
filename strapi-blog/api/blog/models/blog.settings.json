@@ -33,14 +33,6 @@
     },
     "date": {
       "type": "date"
-    },
-    "category": {
-      "model": "category",
-      "via": "blogs"
-    },
-    "secondary": {
-      "via": "blogs",
-      "model": "secondary"
     }
   }
 }

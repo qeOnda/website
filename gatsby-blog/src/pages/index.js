@@ -70,9 +70,7 @@ export default function Home({ data })  {
                       }}>
                       {post.node.title}
                     </Link>
-                  </h3>        
-                  <small sx={{ fontWeight: 'bold',  fontStyle: 'italic', color: 'text1' }}>{post.node.category.name}</small>
-                  
+                  </h3>                                            
                   <p
                     sx={{
                       m: 0,
@@ -80,7 +78,7 @@ export default function Home({ data })  {
                       textJustify: 'inter-word'
                     }}>
                     {post.node.description}
-                  </p>
+                  </p>                  
                 </li>
               ))}
               {data.allStrapiProject.edges.map(post => (
@@ -102,9 +100,7 @@ export default function Home({ data })  {
                       }}>
                       {post.node.title}
                     </Link>
-                  </h3>
-                  <small sx={{ fontWeight: 'bold',  fontStyle: 'italic', color: 'text1' }}>{post.node.category.name}</small>
-                  
+                  </h3>                                                    
                   <p
                     sx={{
                       m: 0,
@@ -112,7 +108,7 @@ export default function Home({ data })  {
                       textJustify: 'inter-word'
                     }}>
                     {post.node.description}
-                  </p>                  
+                  </p>                       
                 </li>
               ))}            
             </ul>
@@ -134,10 +130,7 @@ export const pageQuery = graphql`
         date
         content
         description
-        slug
-        category {
-          name
-        }
+        slug        
         
       }
     }
@@ -151,15 +144,14 @@ export const pageQuery = graphql`
         content
         description
         slug
-        category {
-          name
-        }
         
       }
     }
   }
   }
 `
+
+
 
 
 

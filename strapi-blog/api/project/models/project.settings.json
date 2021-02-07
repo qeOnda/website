@@ -43,14 +43,6 @@
       ],
       "plugin": "upload",
       "required": false
-    },
-    "category": {
-      "via": "projects",
-      "model": "category"
-    },
-    "secondary": {
-      "via": "projects",
-      "model": "secondary"
     }
   }
 }
