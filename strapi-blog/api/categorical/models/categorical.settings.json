@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categoricals",
+  "info": {
+    "name": "categorical"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "blogs": {
+      "collection": "blog",
+      "via": "categoricals",
+      "dominant": true
+    },
+    "projects": {
+      "collection": "project",
+      "via": "categoricals",
+      "dominant": true
+    }
+  }
+}

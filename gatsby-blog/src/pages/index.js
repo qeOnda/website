@@ -70,7 +70,8 @@ export default function Home({ data })  {
                       }}>
                       {post.node.title}
                     </Link>
-                  </h3>                                            
+                  </h3>     
+                  <small sx={{ fontWeight: 'bold', fontStyle: 'italic',  }}>Blog</small>                                       
                   <p
                     sx={{
                       m: 0,
@@ -78,7 +79,22 @@ export default function Home({ data })  {
                       textJustify: 'inter-word'
                     }}>
                     {post.node.description}
-                  </p>                  
+                  </p>   
+                  {post.node.categoricals.map(secondary => (
+                    <small 
+                      sx={{ 
+                        marginRight: 2,
+                        fontWeight: 'bold',  
+                        fontStyle: 'italic', 
+                        color: 'white', 
+                        display: 'inline-block', 
+                        bg:'text1', 
+                        px:1 
+                      }}
+                    >
+                      {secondary.name}                    
+                    </small>                  
+                  ))}               
                 </li>
               ))}
               {data.allStrapiProject.edges.map(post => (
@@ -100,7 +116,8 @@ export default function Home({ data })  {
                       }}>
                       {post.node.title}
                     </Link>
-                  </h3>                                                    
+                  </h3>  
+                  <small sx={{ fontWeight: 'bold', fontStyle: 'italic',  }}>Project</small>                                                                                         
                   <p
                     sx={{
                       m: 0,
@@ -108,7 +125,22 @@ export default function Home({ data })  {
                       textJustify: 'inter-word'
                     }}>
                     {post.node.description}
-                  </p>                       
+                  </p>
+                  {post.node.categoricals.map(secondary => (
+                    <small 
+                      sx={{ 
+                        marginRight: 2,
+                        fontWeight: 'bold',  
+                        fontStyle: 'italic', 
+                        color: 'white', 
+                        display: 'inline-block', 
+                        bg:'text1', 
+                        px:1 
+                      }}
+                    >
+                      {secondary.name}                    
+                    </small>                  
+                  ))}                       
                 </li>
               ))}            
             </ul>
@@ -131,7 +163,9 @@ export const pageQuery = graphql`
         content
         description
         slug        
-        
+        categoricals {
+          name
+        }
       }
     }
   }
@@ -144,7 +178,9 @@ export const pageQuery = graphql`
         content
         description
         slug
-        
+        categoricals {
+          name
+        }
       }
     }
   }

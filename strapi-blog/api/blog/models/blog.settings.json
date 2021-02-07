@@ -33,6 +33,10 @@
     },
     "date": {
       "type": "date"
+    },
+    "categoricals": {
+      "via": "blogs",
+      "collection": "categorical"
     }
   }
 }
