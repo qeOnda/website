@@ -12,7 +12,7 @@ export default function Projects({ data })  {
     <Layout>
 	    <Grid	    	
 	    	sx={{	    	
-	    		maxWidth: '40rem',
+	    		maxWidth: ['40rem'],
 	    		mx: 'auto',
 	    		p:2 	          	
 	    	}}
@@ -22,7 +22,10 @@ export default function Projects({ data })  {
 			  sx={{			    
 			    listStyle: 'none',
 			    display: 'grid',
-			    gridTemplateColumns: 'repeat(auto-fit, minmax(256px, 1fr))',			   			    
+			    gridTemplateColumns: [                                    
+                  'repeat(1, minmax(50px, 1fr))',
+                  'repeat(2, minmax(256px, 1fr))',
+                ],
 			    m: 0,
                 px: 3,
                 py: 4,          

@@ -15,7 +15,8 @@ export default function Hero() {
 	return (
 		<div
 			sx={{ 		
-				paddingTop: `1rem`, 				
+				paddingTop: `1rem`, 
+				width: ['100%', '60%',],				
 			}}
 		>
 			<h1>Sean May</h1>
@@ -31,7 +32,9 @@ export default function Hero() {
 					listStyleType: 'none',
 					display: 'flex',
 					flexDirection: 'row',	
-					paddingTop: '2.5rem',
+					margin: 0,
+					padding: 0
+					
 				}}
 			>
 				<li sx={{paddingRight: `1rem`}}><a href="" target="_blank" rel="noopener noreferrer" style={linkStyle}>Email</a></li>

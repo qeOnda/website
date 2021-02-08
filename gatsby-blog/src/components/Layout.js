@@ -14,7 +14,7 @@ export default function Layout({ children }) {
   return (
     <Box 
       sx={{ 
-        paddingTop: `1rem`,         
+        paddingTop: `1rem`,          
       }}>    
       <Header />  
       { children }

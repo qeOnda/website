@@ -18,7 +18,7 @@ export default function Header() {
 	return (
 		<header		  
 		  sx={{
-		    maxWidth: '40rem',
+		    maxWidth: ['40rem'],
 		    mx: 'auto', 
 		    display: 'flex',
 		    alignItems: 'center',

@@ -18,10 +18,11 @@ export default function Home({ data })  {
   return (
     <Layout>
     	<Box
-        sx={{
-          maxWidth: '40rem',
+        sx={{          
+          maxWidth: ['40rem'],
           mx: 'auto', 
-          p: 2          
+          p: 2,
+          paddingBottom: ['20rem', '0rem']                  
         }}
       >
         <HeroHead>
@@ -31,14 +32,15 @@ export default function Home({ data })  {
       <Box
         sx={{
           bg:'primary',
-          p:2
+          p:2,
+          width: '100%',          
         }}
       >
         <div
           sx={{
-            maxWidth: '40rem',
+            maxWidth: ['20rem', '40rem'],
             mx: 'auto', 
-            paddingTop: 4
+            paddingTop: [4]
           }}
         >
           <Grid> 
@@ -47,7 +49,10 @@ export default function Home({ data })  {
               sx={{         
                 listStyle: 'none',
                 display: 'grid',              
-                gridTemplateColumns: 'repeat(auto-fit, minmax(256px, 1fr))',
+                gridTemplateColumns: [                                    
+                  'repeat(1, minmax(100px, 2fr))',
+                  'repeat(2, minmax(256px, 1fr))',
+                ],
                 paddingBottom: 4,
                 m: 0,
                 px: 3,

@@ -1,5 +1,6 @@
 export default {
   colors: {
+    breakpoints: ['640px', '768px', '1024px', '1280px', '1536px'],
     text: "black",
     text1: "#9AC5C4",
     test: "#F89BA1",
