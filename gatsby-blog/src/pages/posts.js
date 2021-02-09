@@ -23,8 +23,8 @@ export default function Posts({ data })  {
 			    listStyle: 'none',
 			    display: 'grid',			    
 			    gridTemplateColumns: [                                    
-                  'repeat(1, minmax(50px, 1fr))',
-                  'repeat(2, minmax(256px, 1fr))',
+                  'repeat(1, minmax(2fr))',
+                  'repeat(2, minmax(100px, 1fr))',
                 ],
 			    m: 0,
                 px: 3,

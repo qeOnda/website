@@ -7,7 +7,6 @@ import { jsx } from 'theme-ui'
 const footerStyle = {
 	fontFamily: "Open Sans",
 	fontWeight: 400,
-	fontSize: "1rem"
 }
 
 export default function Footer() {
@@ -18,6 +17,7 @@ export default function Footer() {
 				mx: 'auto', 
 				textAlign: 'center', 
 				p: 4,
+				fontSize: ["0.8rem",'1rem' ]
 				
 			}}
 			style={footerStyle}

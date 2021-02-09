@@ -5,38 +5,37 @@ import { Link, graphql } from "gatsby"
 import Layout from '../components/Layout'
 import Styled from '@emotion/styled'
 
-import { jsx, Grid } from 'theme-ui'
+import { jsx, Box } from 'theme-ui'
 
 export default function About({ data })  {
   return (
     <Layout>
-	    <Grid	    	
+	    <Box	    	
 	    	sx={{	    	
-	    		maxWidth: '40rem',
+	    		maxWidth: ['60rem'],
 	    		mx: 'auto',
-	    		p:2 	          	
+	    		p:2,	    			    	
 	    	}}
 	    >	
-	    	<h1>Hi I'm Sean1</h1>
-	   	</Grid>	
+		    <div
+		    	sx={{
+		    		width: ['100%', '50%',],
+		    	}}
+		    >
+		    	<h1>Hi I'm Sean!</h1>
+		    	<p>{data.strapiAbout.bio}</p>
+		    </div>	
+	   	</Box>	
     </Layout>
   )
 }
 
 
-// export const pag = graphql`  
-//   query In {
-//     allStrapiTest {
-//       edges {
-//         node {
-//           id
-//           title
-//           date
-//           content
-//           description
-//         }
-//       }
-//     }
-//   }
-// `
+export const pageQuery = graphql`  
+  query AboutQuery {
+    strapiAbout(strapiId: { eq: 1 }) {
+      bio
+    }
+  }
+`
 
