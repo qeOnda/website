@@ -12,7 +12,7 @@ export default function Posts({ data })  {
     <Layout>
 	    <Grid	    	
 	    	sx={{	    	
-	    		maxWidth: ['40rem'],
+	    		maxWidth: ['60rem'],
 	    		mx: 'auto', 
 	    		p:2	          	
 	    	}}
