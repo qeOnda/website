@@ -39,7 +39,7 @@ export default function Home({ data })  {
       >
         <div
           sx={{
-            maxWidth: ['40rem','60rem'],
+            maxWidth: ['60rem'],
             mx: 'auto', 
           }}
         >

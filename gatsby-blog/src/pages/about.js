@@ -6,8 +6,11 @@ import Layout from '../components/Layout'
 import Styled from '@emotion/styled'
 import Img from 'gatsby-image'
 import { rhythm } from '../utils/typography'
+import { faMedium, faGithubSquare } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { jsx, Box } from 'theme-ui'
+import { jsx, Box, Grid } from 'theme-ui'
 
 export default function About({ data })  {
   return (
@@ -18,35 +21,74 @@ export default function About({ data })  {
 	    		mx: 'auto',
 	    		p:2,	    		
 	    		display: 'flex',
-	    		flexDirection: ['column','column', 'row',],
-	    		paddingTop: ["", "", rhythm(2)],	    		
+	    		flexDirection: ['column','row', 'row',],
+	    		paddingTop: ["", rhythm(2), rhythm(2)],	    		
 	    	}}
 	    >	
 		    <div
 		    	sx={{
 		    		width: ['100%', '100%', '15%'],
-		    		order: 1
+		    		order: 1,
+		    		display: ["inline-block" ,"none", "inline-block"],
+		    		textAlign: ["left"]		    		
 		    	}}
 		    >
 		    	<h1>Hi I'm Sean!</h1>
-		    </div>		    	
+		    	<div
+			    	sx={{
+			    		display: "flex",
+			    		flexDirection: "row",
+			    		// alignItems: "center"
+			    		justifyContent: "flex-start",	
+			    		display: ["none", "none" , "inline-block"]			    		
+			    	}}
+			    >
+			    	<FontAwesomeIcon icon={faGithubSquare} size="2x" style={{ color: "#84B5D7", }} sx={{"marginRight":1}}/>		
+			    	<FontAwesomeIcon icon={faMedium} size="2x" style={{ color: "#84B5D7", }} sx={{"marginRight":1}}/>			    
+			    	<FontAwesomeIcon icon={faEnvelopeSquare} size="2x" style={{ color: "#84B5D7", }} sx={{"marginRight":1}}/>		    	
+			    </div>	
+			    
+		    </div>
+		    
 		    <div
 		    	sx={{
-		    		width: ['100%', '100%', '42.5%',],
+		    		width: ['100%', '60%', '42.5%',],
 		    		m: 2,
-		    		order: [3, 3, 2] 
+		    		order: [3, 3, 2], 
+		    		marginLeft: [0, rhythm(1)]
 		    	}}
 		    >
 		    	<p>{data.strapiAbout.bio}</p>
 		    </div>
 		   	<div
 		   		sx={{
-		   			width: ['100%', '100%', '42.5%',],
-		   			m:2,
-		   			order: [2, 2, 3]
+		   			width: ['100%', '40%', '42.5%',],
+		   			m:[0, 0, 2],
+		   			order: [2, 2, 3],		   				                
 		   		}}
 		   	>	
+		   		<h1
+		   			sx={{
+		   				display: ["none", "inline-block" , "none"]	
+		   			}}
+		   		>
+		   			Hi I'm Sean!
+		   		</h1>
 		   		<Img fluid={data.strapiAbout.profile.childImageSharp.fluid}/>
+		   		<div
+			    	sx={{
+			    		paddingTop: rhythm(1),			    	
+			    		display: "flex",
+			    		flexDirection: "row",
+			    		// alignItems: "center"
+			    		justifyContent: "flex-start",	
+			    		display: ["inline-block", "inline-block" , "none"]			    		
+			    	}}
+			    >
+			    	<FontAwesomeIcon icon={faGithubSquare} size="2x" style={{ color: "#84B5D7", }} sx={{"marginLeft":1}}/>		
+			    	<FontAwesomeIcon icon={faMedium} size="2x" style={{ color: "#84B5D7", }} sx={{"marginLeft":1}}/>			    
+			    	<FontAwesomeIcon icon={faEnvelopeSquare} size="2x" style={{ color: "#84B5D7", }} sx={{"marginLeft":1}}/>		    	
+			    </div>	
 			</div>
 	   	</Box>	
     </Layout>
@@ -60,7 +102,7 @@ export const pageQuery = graphql`
       bio
       profile {
       	childImageSharp {
-	            fluid(maxWidth: 200, maxHeight: 400) {
+	            fluid(maxWidth: 200, maxHeight: 200) {
 	              ...GatsbyImageSharpFluid
 	            }
 	        }    

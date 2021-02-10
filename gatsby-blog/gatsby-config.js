@@ -10,6 +10,7 @@ module.exports = {
       },
     },
     "gatsby-plugin-sharp",
+    "gatsby-plugin-fontawesome-css",
     {
       resolve: `gatsby-source-strapi`,
       options: {
