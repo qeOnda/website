@@ -9,7 +9,7 @@ import { jsx } from 'theme-ui'
 const linkStyle = {
 	fontFamily: "Open Sans",
 	fontWeight: 400,	
-	color: '#9AC5C4'
+	color: '#F8AB28'
 }
 
 export default function Hero( prop ) {

@@ -61,6 +61,20 @@ export default function Projects({ data })  {
 			        }}>
 			        {post.node.description}
 			      </p>
+			      {post.node.categoricals.map(secondary => (
+                    <small 
+                      sx={{ 
+                        marginRight: 2,                          
+                        fontStyle: 'italic', 
+                        color: 'white', 
+                        display: 'inline-block', 
+                        bg:'icon', 
+                        px:1 
+                      }}
+                    >
+                      {secondary.name}                    
+                    </small>                  
+                  ))}
 			    </li>
 			  ))}
 			</ul>
@@ -81,6 +95,10 @@ export const pageQuery = graphql`
           content
           description
           slug 
+          categoricals {
+            name
+            id
+          }
           image {
 	          childImageSharp {
 	            fluid(maxWidth: 200) {

@@ -31,7 +31,7 @@ export default function Home({ data })  {
       </Box>    
       <Box
         sx={{
-          bg:'primary',
+          bg: 'secondary',
           p:2,
           width: '100%',   
 
@@ -72,7 +72,7 @@ export default function Home({ data })  {
                         color: 'inherit',
                         textDecoration: 'none',
                         ':hover,:focus': {
-                          color: 'text1',
+                          color: 'accent',
                           textDecoration: 'underline',                        
                         }
                       }}>
@@ -95,7 +95,7 @@ export default function Home({ data })  {
                         fontStyle: 'italic', 
                         color: 'white', 
                         display: 'inline-block', 
-                        bg:'text1', 
+                        bg:'icon', 
                         px:1 
                       }}
                     >
@@ -117,7 +117,7 @@ export default function Home({ data })  {
                         color: 'inherit',
                         textDecoration: 'none',
                         ':hover,:focus': {
-                          color: 'text1',
+                          color: 'accent',
                           textDecoration: 'underline',                        
                         }
                       }}>
@@ -140,7 +140,7 @@ export default function Home({ data })  {
                         fontStyle: 'italic', 
                         color: 'white', 
                         display: 'inline-block', 
-                        bg:'text1', 
+                        bg:'icon', 
                         px:1 
                       }}
                     >

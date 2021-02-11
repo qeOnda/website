@@ -31,7 +31,7 @@ export default function Header() {
 		  <Link to='/'
 		    sx={{
 		      variant: 'styles.navlink',
-		      color: 'text1'
+		      color: 'accent'
 		    }}
 		    style={headerStyle}
 		  >  
@@ -41,7 +41,7 @@ export default function Header() {
 		  <Link to='/about'
 		    sx={{
 		      variant: 'styles.navlink',
-		      color: 'text1',
+		      color: 'accent',
 		      p: 2,		      
 		    }}
 		    style={headerStyle}
@@ -51,7 +51,7 @@ export default function Header() {
 		  <Link to='/projects'
 		    sx={{
 		      variant: 'styles.navlink',		      
-		      color: 'text1',
+		      color: 'accent',
 		      marginLeft: '1rem'
 		    }}
 		    style={headerStyle}
@@ -61,7 +61,7 @@ export default function Header() {
 		  <Link to='/posts'
 		    sx={{
 		      variant: 'styles.navlink',		      
-		      color: 'text1',
+		      color: 'accent',
 		      marginLeft: '1rem'
 		    }}
 		    style={headerStyle}

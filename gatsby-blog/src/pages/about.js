@@ -6,9 +6,6 @@ import Layout from '../components/Layout'
 import Styled from '@emotion/styled'
 import Img from 'gatsby-image'
 import { rhythm } from '../utils/typography'
-import { faMedium, faGithubSquare } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { jsx, Box, Grid } from 'theme-ui'
 
@@ -34,25 +31,13 @@ export default function About({ data })  {
 		    	}}
 		    >
 		    	<h1>Hi I'm Sean!</h1>
-		    	<div
-			    	sx={{
-			    		display: "flex",
-			    		flexDirection: "row",
-			    		// alignItems: "center"
-			    		justifyContent: "flex-start",	
-			    		display: ["none", "none" , "inline-block"]			    		
-			    	}}
-			    >
-			    	<FontAwesomeIcon icon={faGithubSquare} size="2x" style={{ color: "#84B5D7", }} sx={{"marginRight":1}}/>		
-			    	<FontAwesomeIcon icon={faMedium} size="2x" style={{ color: "#84B5D7", }} sx={{"marginRight":1}}/>			    
-			    	<FontAwesomeIcon icon={faEnvelopeSquare} size="2x" style={{ color: "#84B5D7", }} sx={{"marginRight":1}}/>		    	
-			    </div>	
+		    	
 			    
 		    </div>
 		    
 		    <div
 		    	sx={{
-		    		width: ['100%', '60%', '42.5%',],
+		    		width: ['100%', '60%', '52.5%',],
 		    		m: 2,
 		    		order: [3, 3, 2], 
 		    		marginLeft: [0, rhythm(1)]
@@ -62,7 +47,7 @@ export default function About({ data })  {
 		    </div>
 		   	<div
 		   		sx={{
-		   			width: ['100%', '40%', '42.5%',],
+		   			width: ['60%', '40%', '32.5%',],
 		   			m:[0, 0, 2],
 		   			order: [2, 2, 3],		   				                
 		   		}}
@@ -74,21 +59,7 @@ export default function About({ data })  {
 		   		>
 		   			Hi I'm Sean!
 		   		</h1>
-		   		<Img fluid={data.strapiAbout.profile.childImageSharp.fluid}/>
-		   		<div
-			    	sx={{
-			    		paddingTop: rhythm(1),			    	
-			    		display: "flex",
-			    		flexDirection: "row",
-			    		// alignItems: "center"
-			    		justifyContent: "flex-start",	
-			    		display: ["inline-block", "inline-block" , "none"]			    		
-			    	}}
-			    >
-			    	<FontAwesomeIcon icon={faGithubSquare} size="2x" style={{ color: "#84B5D7", }} sx={{"marginLeft":1}}/>		
-			    	<FontAwesomeIcon icon={faMedium} size="2x" style={{ color: "#84B5D7", }} sx={{"marginLeft":1}}/>			    
-			    	<FontAwesomeIcon icon={faEnvelopeSquare} size="2x" style={{ color: "#84B5D7", }} sx={{"marginLeft":1}}/>		    	
-			    </div>	
+		   		<Img fluid={data.strapiAbout.profile.childImageSharp.fluid}/>		   	
 			</div>
 	   	</Box>	
     </Layout>
