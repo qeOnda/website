@@ -14,9 +14,9 @@ export default function About({ data })  {
     <Layout>
 	    <Box	    	
 	    	sx={{	    	
-	    		maxWidth: ['60rem'],
+	    		maxWidth: [rhythm(30)],
 	    		mx: 'auto',
-	    		p:2,	    		
+	    		p:rhythm(1),	    		
 	    		display: 'flex',
 	    		flexDirection: ['column','row', 'row',],
 	    		paddingTop: ["", rhythm(2), rhythm(2)],	    		

@@ -17,33 +17,38 @@ export default function Footer() {
 	return (
 		<Box
 			sx={{
-				maxWidth: [ '40rem'],
+				maxWidth: [rhythm(30)],
 				mx: 'auto', 
 				textAlign: 'center', 
-				p: 4,
+				p: rhythm(1)
 				
 			}}
 		>
 			<div				
 				style={footerStyle}
 				sx={{
-					fontSize: ["0.8rem",'1rem' ]
+					// fontSize: ["0.8rem",'1rem' ]
 				}}
 			>
 				Built with <a href="https://www.gatsbyjs.com/" target="_blank" rel="noopener noreferrer" sx={{color:'accent'}}>Gatsby</a> and <a href="https://strapi.io/" target="_blank" rel="noopener noreferrer" sx={{color:'accent'}}>Strapi</a>. Check out the code on <a href="https://github.com/qeOnda/website" target="_blank" rel="noopener noreferrer" sx={{color:'accent'}}>Github</a>.
 			</div>
 			<div
 				sx={{
-					paddingTop: 1,
+					
 					display: "flex",
-					justifyContent: "center",
-					color: "icon",
-					fontSize: ["1.2rem",'1.5rem' ]					
+					justifyContent: "center",					
+					fontSize: ['1.5rem' ]					
 				}}				
 			>
-				<FontAwesomeIcon icon={faGithub} size="" sx={{"marginLeft":1, ":hover": {color: 'accent'}}} />		
-				<FontAwesomeIcon icon={faMedium} size="" sx={{"marginLeft":1}} sx={{marginLeft: rhythm(1), ":hover": {color: 'accent'}}}/>			    
-				<FontAwesomeIcon icon={faEnvelopeSquare} size="" sx={{"marginLeft":1}} sx={{marginLeft: rhythm(1), ":hover": {color: 'accent'}}}/>		    	
+				<a href="https://github.com/qeOnda" target="_blank" rel="noopener noreferrer">
+					<FontAwesomeIcon icon={faGithub} size="" sx={{color: "icon", ":hover": {color: 'accent'}}} />		
+				</a>
+				<a href="https://medium.com/" target="_blank" rel="noopener noreferrer">
+					<FontAwesomeIcon icon={faMedium} size="" sx={{marginLeft: rhythm(1), color: "icon", ":hover": {color: 'accent'}}}/>			    
+				</a>
+				<a href="" target="_blank" rel="noopener noreferrer">
+					<FontAwesomeIcon icon={faEnvelopeSquare} size="" sx={{marginLeft: rhythm(1), color: "icon", ":hover": {color: 'accent'}}}/>		    	
+				</a>
 			</div>	
 		</Box>	
 	)

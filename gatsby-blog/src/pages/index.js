@@ -7,9 +7,7 @@ import Hero from '../components/Hero'
 import FeaturedPosts from '../components/FeaturedPosts'
 import styled from "@emotion/styled"
 import { jsx, Box, Grid } from 'theme-ui'
-
-const HeroHead = styled.header`  
-`;
+import { rhythm } from '../utils/typography'
 
 
 export default function Home({ data })  {
@@ -17,9 +15,9 @@ export default function Home({ data })  {
     <Layout>	
       <Box
         sx={{          
-          maxWidth: ['60rem'],
+          maxWidth: [rhythm(30)],
           mx: 'auto', 
-          p: 2,
+          p: rhythm(1),
           height: '100vh',  
           paddingTop: '10%',
           position: 'relative',                    
@@ -32,14 +30,14 @@ export default function Home({ data })  {
       <Box
         sx={{
           bg: 'secondary',
-          p:2,
+          p: rhythm(1),
           width: '100%',   
 
         }}
       >
         <div
           sx={{
-            maxWidth: ['60rem'],
+            maxWidth: [rhythm(30)],
             mx: 'auto', 
           }}
         >
@@ -96,7 +94,7 @@ export default function Home({ data })  {
                         color: 'white', 
                         display: 'inline-block', 
                         bg:'icon', 
-                        px:1 
+                        px: rhythm(1/4)
                       }}
                     >
                       {secondary.name}                    
@@ -141,7 +139,7 @@ export default function Home({ data })  {
                         color: 'white', 
                         display: 'inline-block', 
                         bg:'icon', 
-                        px:1 
+                        px: rhythm(1/4)
                       }}
                     >
                       {secondary.name}                    

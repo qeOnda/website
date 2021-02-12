@@ -3,7 +3,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { jsx } from 'theme-ui'
-
+import { rhythm } from '../utils/typography'
 
 
 const linkStyle = {
@@ -21,14 +21,15 @@ export default function Hero( prop ) {
 		>
 			<h1
 				sx={{
-					fontSize: ['2rem', '3rem', '3rem', '4rem', ]						
+					// fontSize: ['2.3rem', '2.5rem', '2.5rem', '2.7rem', ]					
+					fontSize: ['2.2rem', '2.5rem', '2.5rem', '2.7rem', ]							
 				}}
 			>
 				Sean May
 			</h1>
 			<p
 				sx={{
-					fontSize: ['1rem', '1.3rem', '1.3rem','1.6rem']						
+					fontSize: ['1.1rem', '1.3rem', '1.3rem','1.4rem']						
 				}}
 			>
 				{prop.hero}
@@ -43,11 +44,14 @@ export default function Hero( prop ) {
 					
 				}}
 			>				
-				<li sx={{paddingRight: `1rem`, fontSize: ['0.9rem', '1.2rem'], }}><a href="https://github.com/qeOnda" target="_blank" rel="noopener noreferrer" style={linkStyle}>Github</a></li>				
-				<li sx={{paddingRight: `1rem`, fontSize: ['0.9rem', '1.2rem'], }}><a href="" target="_blank" rel="noopener noreferrer" style={linkStyle}>Medium</a></li>
-				<li sx={{paddingRight: `1rem`, fontSize: ['0.9rem', '1.2rem'], }}><a href="" target="_blank" rel="noopener noreferrer" style={linkStyle}>Email</a></li>
+				<li sx={{paddingRight: rhythm(1),  }}><a href="https://github.com/qeOnda" target="_blank" rel="noopener noreferrer" style={linkStyle}>Github</a></li>				
+				<li sx={{paddingRight: rhythm(1),  }}><a href="https://medium.com/" target="_blank" rel="noopener noreferrer" style={linkStyle}>Medium</a></li>
+				<li sx={{ }}><a href="" target="_blank" rel="noopener noreferrer" style={linkStyle}>Email</a></li>
 			</ul>
 		</div>
 	)
 }
 
+
+// fontSize: ['0.9rem', '1.2rem'],
+// paddingRight: `1rem`,

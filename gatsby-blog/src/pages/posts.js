@@ -6,15 +6,16 @@ import Layout from '../components/Layout'
 import Styled from '@emotion/styled'
 import Img from 'gatsby-image'
 import { jsx, Grid } from 'theme-ui'
+import { rhythm } from '../utils/typography'
 
 export default function Posts({ data })  {
   return (
     <Layout>
 	    <Grid	    	
 	    	sx={{	    	
-	    		maxWidth: ['60rem'],
-	    		mx: 'auto', 
-	    		p:2	          	
+	    		maxWidth: [rhythm(30)],
+	    		mx: 'auto',
+	    		p:rhythm(1)       	
 	    	}}
 	    >	
 	    	<h1>Blog</h1>
@@ -45,7 +46,7 @@ export default function Posts({ data })  {
 			            color: 'inherit',
 			            textDecoration: 'none',
 			            ':hover,:focus': {
-			              color: 'text1',
+			              color: 'accent',
 			              textDecoration: 'underline',
 			            }
 			          }}>

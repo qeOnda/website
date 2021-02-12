@@ -18,20 +18,18 @@ export default function Header() {
 	return (
 		<header		  
 		  sx={{
-		    maxWidth: ['60rem'],
+		    maxWidth: [rhythm(30)],
 		    mx: 'auto', 
 		    display: 'flex',
 		    alignItems: 'center',
-		    variant: 'styles.header',
-		    paddingTop: '1.5rem',
-		    p: 2,
-		   
-		    
+		    variant: 'styles.header',		    
+		    p: rhythm(1),		
 		  }}>
 		  <Link to='/'
 		    sx={{
 		      variant: 'styles.navlink',
-		      color: 'accent'
+		      color: 'accent',
+		      // display: ["none", "inline-block" , "inline-block"],
 		    }}
 		    style={headerStyle}
 		  >  
@@ -42,7 +40,7 @@ export default function Header() {
 		    sx={{
 		      variant: 'styles.navlink',
 		      color: 'accent',
-		      p: 2,		      
+		      	      
 		    }}
 		    style={headerStyle}
 		   >
@@ -53,6 +51,7 @@ export default function Header() {
 		      variant: 'styles.navlink',		      
 		      color: 'accent',
 		      marginLeft: '1rem'
+		      // marginLeft: '1rem'
 		    }}
 		    style={headerStyle}
 		   >
@@ -63,6 +62,7 @@ export default function Header() {
 		      variant: 'styles.navlink',		      
 		      color: 'accent',
 		      marginLeft: '1rem'
+		      // marginLeft: rhythm(1)
 		    }}
 		    style={headerStyle}
 		   >

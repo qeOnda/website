@@ -6,15 +6,16 @@ import Layout from '../components/Layout'
 import Styled from '@emotion/styled'
 import Img from 'gatsby-image'
 import { jsx, Grid } from 'theme-ui'
+import { rhythm } from '../utils/typography'
 
 export default function Projects({ data })  {
   return (
     <Layout>
 	    <Grid	    	
 	    	sx={{	    	
-	    		maxWidth: ['60rem'],
+	    		maxWidth: [rhythm(30)],
 	    		mx: 'auto',
-	    		p:2 	          	
+	    		p:rhythm(1), 	          	
 	    	}}
 	    >	
 	    	<h1>Projects</h1>	    	
@@ -47,7 +48,7 @@ export default function Projects({ data })  {
 			            color: 'inherit',
 			            textDecoration: 'none',
 			            ':hover,:focus': {
-			              color: 'text1',
+			              color: 'accent',
 			              textDecoration: 'underline',
 			            }
 			          }}>
@@ -69,7 +70,7 @@ export default function Projects({ data })  {
                         color: 'white', 
                         display: 'inline-block', 
                         bg:'icon', 
-                        px:1 
+                        px: rhythm(1/4)
                       }}
                     >
                       {secondary.name}                    
