@@ -14,7 +14,7 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: process.env.DEPLOY_URL
+        apiURL: process.env.NODE_ENV
           ? process.env.API
           : `http://localhost:1337`,
         contentTypes: [`blog`, `categorical`, `project`, `about`],
