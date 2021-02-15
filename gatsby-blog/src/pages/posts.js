@@ -70,7 +70,7 @@ export default function Posts({ data })  {
 
 
 export const pageQ = graphql`  
-  query IndexQ {
+  query PostsQuery {
     allStrapiBlog {
       edges {
         node {

@@ -86,30 +86,29 @@ export default function Projects({ data })  {
 
 
 export const pageQuery = graphql`  
-  query Inde {
-    allStrapiProject {
-      edges {
-        node {
-          id
-          title
-          date
-          content
-          description
-          slug 
-          categoricals {
-            name
-            id
-          }
-          image {
-	          childImageSharp {
-	            fluid(maxWidth: 200) {
-	              ...GatsbyImageSharpFluid
-	            }
-	          }
-	        }
-	              
-        }
-      }
-    }
-  }
+	query ProjQuery {
+		allStrapiProject {
+			edges {
+				node {
+					id
+					title
+					date
+					content
+					description
+					slug 
+					categoricals {
+						name
+						id
+					}
+					image {
+						childImageSharp {
+							fluid(maxWidth: 200) {
+								...GatsbyImageSharpFluid
+				            }
+		    			}
+					}	            
+	        	}
+	      	}
+	    }
+	}
 `
