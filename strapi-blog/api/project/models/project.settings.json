@@ -23,7 +23,7 @@
       "required": true
     },
     "description": {
-      "type": "string",
+      "type": "text",
       "maxLength": 150
     },
     "featured": {
@@ -45,8 +45,8 @@
       "required": false
     },
     "categoricals": {
-      "via": "projects",
-      "collection": "categorical"
+      "collection": "categorical",
+      "via": "projects"
     }
   }
 }

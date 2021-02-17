@@ -19,8 +19,8 @@
       "dominant": true
     },
     "projects": {
-      "collection": "project",
       "via": "categoricals",
+      "collection": "project",
       "dominant": true
     }
   }
