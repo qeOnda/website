@@ -15,7 +15,8 @@ module.exports = {
       resolve: `gatsby-source-strapi`,
       options: {
         apiURL: process.env.DEPLOY_URL
-          ? "https://thawing-savannah-02849.herokuapp.com"
+          // ? "https://thawing-savannah-02849.herokuapp.com"
+          ? "https://radiant-badlands-82914.herokuapp.com"
           : `http://localhost:1337`,
         contentTypes: [`blog`, `categorical`, `project`, `about`],
         queryLimit: 1000,
