@@ -1,8 +1,14 @@
 'use strict';
+const octokit = new Octokit({ auth: `${process.env.GITHUB_TOKEN}` });
 
-/**
- * Read the documentation (https://strapi.io/documentation/developer-docs/latest/concepts/models.html#lifecycle-hooks)
- * to customize this model
- */
-
-module.exports = {};
+module.exports = {
+	lifecycles: {
+		async afterCreate(data) {
+			await octokit.request('POST /repos/{owner}/{repo}/dispatches', {
+			  owner: 'qeOnda',
+			  repo: 'hello-world',
+			  event_type: 'event_type'
+			})
+		}	
+	}
+};
