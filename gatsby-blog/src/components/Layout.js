@@ -6,7 +6,7 @@ import Header from './Header'
 import Footer from './Footer'
 import { rhythm } from "../utils/typography"
 import { jsx, Box } from 'theme-ui'
-
+import "./layout.css"
 
 
 

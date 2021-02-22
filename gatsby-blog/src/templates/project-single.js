@@ -5,6 +5,8 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import { jsx, Box } from 'theme-ui'
 import Img from 'gatsby-image'
+import Reactmarkdown from 'react-markdown'
+import CodeBlock from '../components/CodeBlock'
 
 export default function projectSingle({ data }) {
 	return (
@@ -19,8 +21,12 @@ export default function projectSingle({ data }) {
       >
       	<Img fluid={data.strapiProject.image.childImageSharp.fluid}/>
         <h1>{data.strapiProject.title}</h1>
-        <small sx={{ fontWeight: 'bold' }}>{data.strapiProject.date}</small>
-  			<p sx={{ paddingTop: 2 }} >{data.strapiProject.content}</p>        
+        <small sx={{ fontWeight: 'bold' }}>{data.strapiProject.date}</small>  		
+        <Reactmarkdown 
+          source={data.strapiProject.content}
+          renderers={{ code: CodeBlock }}            
+          sx={{ paddingTop: 2 }}
+        />  
       </Box>  
 		</Layout>
 	)

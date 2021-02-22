@@ -4,6 +4,8 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import { jsx, Box } from 'theme-ui'
+import Reactmarkdown from 'react-markdown'
+import CodeBlock from '../components/CodeBlock'
 
 export default function Article({ data }) {
 	return (
@@ -17,7 +19,11 @@ export default function Article({ data }) {
       >
       	<h1>{data.strapiBlog.title}</h1>
         <small sx={{ fontWeight: 'bold' }}>{data.strapiBlog.date}</small>
-  			<p sx={{ paddingTop: 2 }} >{data.strapiBlog.content}</p>                
+  			<Reactmarkdown 
+          source={data.strapiBlog.content}
+          renderers={{ code: CodeBlock }}            
+          sx={{ paddingTop: 2 }}
+        />                
       </Box>  
 		</Layout>
 	)
