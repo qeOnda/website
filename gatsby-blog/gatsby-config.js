@@ -13,9 +13,8 @@ module.exports = {
     "gatsby-plugin-fontawesome-css",
     {
       resolve: `gatsby-source-strapi`,
-      options: {
-        apiURL: process.env.NODE_ENV          
-        // apiURL: process.env.DEPLOY_URL
+      options: {        
+        apiURL: process.env.DEPLOY_URL
           ? "https://radiant-badlands-82914.herokuapp.com"
           : `http://localhost:1337`,
         contentTypes: [`blog`, `categorical`, `project`, `about`],

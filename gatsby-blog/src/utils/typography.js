@@ -12,7 +12,11 @@ sutroTheme.googleFonts = [
 		styles: ["400", "400i", "900", "900i"],
     },
 ]
-
+sutroTheme.overrideThemeStyles = () => ({
+  'a': {
+    color: "#f9b339",    
+    },
+})
 
 const typography = new Typography(sutroTheme)
 

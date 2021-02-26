@@ -44,7 +44,7 @@ export default function Hero( prop ) {
 					
 				}}
 			>				
-				<li sx={{paddingRight: rhythm(1),  }}><a href="https://github.com/qeOnda" target="_blank" rel="noopener noreferrer" style={linkStyle}>Github</a></li>				
+				<li sx={{paddingRight: rhythm(1),  }}><a href="https://github.com/qeOnda" target="_blank" rel="noopener noreferrer" style={linkStyle}>GitHub</a></li>				
 				<li sx={{paddingRight: rhythm(1),  }}><a href="https://medium.com/" target="_blank" rel="noopener noreferrer" style={linkStyle}>Medium</a></li>
 				<li sx={{ }}><a href="" target="_blank" rel="noopener noreferrer" style={linkStyle}>Email</a></li>
 			</ul>
