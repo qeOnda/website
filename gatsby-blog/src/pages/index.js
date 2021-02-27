@@ -19,7 +19,7 @@ export default function Home({ data })  {
           mx: 'auto', 
           p: rhythm(1),
           height: '100vh',  
-          paddingTop: '10%',
+          paddingTop: ['10%', rhythm(0.5), '10%'],
           position: 'relative',                    
         }}
       >      
@@ -86,19 +86,29 @@ export default function Home({ data })  {
                     }}>
                     {post.node.description}
                   </p>   
-                  {post.node.categoricals.map(secondary => (
-                    <small 
-                      sx={{ 
-                        marginRight: 2,                        
-                        fontStyle: 'italic', 
-                        color: 'white', 
-                        display: 'inline-block', 
-                        bg:'icon', 
-                        px: rhythm(1/4)
-                      }}
-                    >
-                      {secondary.name}                    
-                    </small>                  
+                  {post.node.categoricals.map(tag => (
+                    <Link to={`${tag.name}`}>
+                      <small
+                        sx={{ 
+                          marginRight: 2,                          
+                          fontStyle: 'italic', 
+                          borderRadius: "25px",
+                          border: "2px solid icon",
+                          color: 'white', 
+                          display: 'inline-block', 
+                          bg:'icon',                         
+                          px: rhythm(1/4),
+                          textTransform: 'capitalize',
+                          ':hover,:focus': {
+                            color: 'background',
+                            textDecoration: 'underline', 
+                            textTransform: 'capitalize'                      
+                          }
+                        }}
+                      >
+                        {tag.name}                    
+                      </small>
+                    </Link>                    
                   ))}               
                 </li>
               ))}
@@ -131,19 +141,29 @@ export default function Home({ data })  {
                     }}>
                     {post.node.description}
                   </p>
-                  {post.node.categoricals.map(secondary => (
-                    <small 
-                      sx={{ 
-                        marginRight: 2,                          
-                        fontStyle: 'italic', 
-                        color: 'white', 
-                        display: 'inline-block', 
-                        bg:'icon', 
-                        px: rhythm(1/4)
-                      }}
-                    >
-                      {secondary.name}                    
-                    </small>                  
+                  {post.node.categoricals.map(tag => (
+                    <Link to={`${tag.name}`}>
+                      <small
+                        sx={{ 
+                          marginRight: 2,                          
+                          fontStyle: 'italic', 
+                          borderRadius: "25px",
+                          border: "2px solid icon",
+                          color: 'white', 
+                          display: 'inline-block', 
+                          bg:'icon',                         
+                          px: rhythm(1/4),
+                          textTransform: 'capitalize',
+                          ':hover,:focus': {
+                            color: 'background',
+                            textDecoration: 'underline', 
+                            textTransform: 'capitalize'                      
+                          }
+                        }}
+                      >
+                        {tag.name}
+                      </small>                     
+                    </Link>                  
                   ))}                       
                 </li>
               ))}            

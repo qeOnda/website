@@ -16,6 +16,9 @@ sutroTheme.overrideThemeStyles = () => ({
   'a': {
     color: "#f9b339",    
     },
+   'ul,ol': {
+    marginLeft: rhythm(1.2),
+    },
 })
 
 const typography = new Typography(sutroTheme)

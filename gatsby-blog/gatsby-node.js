@@ -62,6 +62,29 @@ exports.createPages = ({ actions, graphql }) => {
       })
     })
   });
+
+  const getTags = makeRequest(graphql, `
+    {
+      allStrapiCategorical {
+        edges {
+          node {
+            name
+          }
+        }
+      }
+    }
+    `).then(result => {
+    // Create pages for each article.
+    result.data.allStrapiCategorical.edges.forEach(({ node }) => {      
+      createPage({
+        path: `${node.name}`,
+        component: path.resolve(`src/templates/tags.js`),
+        context: {
+          name: node.name,
+        },
+      })
+    })
+  });  
   
   return Promise.all([
     getArticles,

@@ -33,9 +33,7 @@ export default function Posts({ data })  {
                 gridGap: 3     			   			    
 			  }}>
 			  {data.allStrapiBlog.edges.map(post => (
-			    <li key={post.node.id}
-			      sx={{
-			      }}>			     
+			    <li key={post.node.id}>			     
 			      <h2
 			        sx={{
 			          m: 0,
@@ -60,6 +58,30 @@ export default function Posts({ data })  {
 			        }}>
 			        {post.node.description}
 			      </p>
+			      {post.node.categoricals.map(tag => (
+                    <Link to={`/${tag.name}`}>
+                      <small
+                        sx={{ 
+                          marginRight: 2,                          
+                          fontStyle: 'italic', 
+                          borderRadius: "25px",
+                          border: "2px solid icon",
+                          color: 'white', 
+                          display: 'inline-block', 
+                          bg:'icon',                         
+                          px: rhythm(1/4),
+                          textTransform: 'capitalize',
+                          ':hover,:focus': {
+                            color: 'background',
+                            textDecoration: 'underline', 
+                            textTransform: 'capitalize'                      
+                          }
+                        }}
+                      >
+                        {tag.name}
+                      </small>                     
+                    </Link>                  
+                  ))}                       
 			    </li>
 			  ))}
 			</ul>
@@ -79,7 +101,11 @@ export const pageQ = graphql`
           date
           slug
           content
-          description          
+          description 
+          categoricals {
+			name
+			id
+		}         
         }
       }
     }

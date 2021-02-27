@@ -30,7 +30,7 @@ export default function Footer() {
 					// fontSize: ["0.8rem",'1rem' ]
 				}}
 			>
-				Built with <a href="https://www.gatsbyjs.com/" target="_blank" rel="noopener noreferrer" sx={{color:'accent'}}>Gatsby</a> and <a href="https://strapi.io/" target="_blank" rel="noopener noreferrer" sx={{color:'accent'}}>Strapi</a>. Check out the code on <a href="https://github.com/qeOnda/website" target="_blank" rel="noopener noreferrer" sx={{color:'accent'}}>Github</a>.
+				Built with <a href="https://www.gatsbyjs.com/" target="_blank" rel="noopener noreferrer" sx={{color:'accent'}}>Gatsby</a> and <a href="https://strapi.io/" target="_blank" rel="noopener noreferrer" sx={{color:'accent'}}>Strapi</a>
 			</div>
 			<div
 				sx={{
@@ -54,4 +54,4 @@ export default function Footer() {
 	)
 }
 
-
+// Check out the code on <a href="https://github.com/qeOnda/website" target="_blank" rel="noopener noreferrer" sx={{color:'accent'}}>Github</a>.
