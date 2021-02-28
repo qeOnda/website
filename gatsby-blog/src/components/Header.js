@@ -18,8 +18,8 @@ export default function Header() {
 	return (
 		<header		  
 		  sx={{
-		    maxWidth: [rhythm(30)],
-		    mx: 'auto', 
+		    maxWidth: [rhythm(27)],
+          	mx: 'auto',           
 		    display: 'flex',
 		    alignItems: 'center',
 		    variant: 'styles.header',		    

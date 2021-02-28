@@ -13,7 +13,7 @@ export default function Posts({ data })  {
     <Layout>
       <Grid       
         sx={{       
-          maxWidth: [rhythm(30)],
+          maxWidth: [rhythm(27)],
           mx: 'auto',
           p:rhythm(1)         
         }}

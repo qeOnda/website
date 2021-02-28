@@ -17,7 +17,7 @@ export default function Footer() {
 	return (
 		<Box
 			sx={{
-				maxWidth: [rhythm(30)],
+				maxWidth: [rhythm(27)],
 				mx: 'auto', 
 				textAlign: 'center', 
 				p: rhythm(1)

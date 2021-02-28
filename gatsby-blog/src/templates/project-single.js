@@ -14,15 +14,13 @@ export default function projectSingle({ data }) {
 		<Layout>
   		<Box
         sx={{       
-          maxWidth: '40rem',
+          maxWidth: [rhythm(27)],
           mx: 'auto', 
-          p:2,
-          paddingTop: 4            
+          p: rhythm(1),                  
         }}
       >
-      	<Img fluid={data.strapiProject.image.childImageSharp.fluid}/>
-        <h1>{data.strapiProject.title}</h1>
-        <small sx={{ fontWeight: 'bold' }}>{data.strapiProject.date}</small>  		
+      	<h1>{data.strapiProject.title}</h1>        
+        <Img fluid={data.strapiProject.image.childImageSharp.fluid}/>                
         <Reactmarkdown 
           source={data.strapiProject.content}
           renderers={{ code: CodeBlock }}            
@@ -46,11 +44,14 @@ export default function projectSingle({ data }) {
             <small
               sx={{ 
                 marginRight: 2,                          
-                fontStyle: 'italic', 
+                fontSize: 1,
+                fontWeight: 'bold', 
+                fontFamily: "Open Sans",
                 borderRadius: "25px",
                 border: "2px solid icon",
                 color: 'white', 
                 display: 'inline-block', 
+                fontFamily: "Open Sans",
                 bg:'icon',                         
                 px: rhythm(1/4),
                 textTransform: 'capitalize',

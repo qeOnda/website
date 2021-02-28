@@ -15,9 +15,9 @@ export default function Article({ data }) {
 		<Layout>
   		<Box
         sx={{       
-          maxWidth: '40rem',
+          maxWidth: [rhythm(27)],
           mx: 'auto', 
-          p:2             
+          p: rhythm(1),        
         }}
       >
       	<h1>{data.strapiBlog.title}</h1>
@@ -45,7 +45,9 @@ export default function Article({ data }) {
             <small
               sx={{ 
                 marginRight: 2,                          
-                fontStyle: 'italic', 
+                fontSize: 1,
+                fontWeight: 'bold', 
+                fontFamily: "Open Sans",
                 borderRadius: "25px",
                 border: "2px solid icon",
                 color: 'white', 

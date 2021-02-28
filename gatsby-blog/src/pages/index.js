@@ -15,9 +15,9 @@ export default function Home({ data })  {
     <Layout>	
       <Box
         sx={{          
-          maxWidth: [rhythm(30)],
+          maxWidth: [rhythm(27)],
           mx: 'auto', 
-          p: rhythm(1),
+          p: rhythm(1),       
           height: '100vh',  
           paddingTop: ['10%', rhythm(0.5), '10%'],
           position: 'relative',                    
@@ -29,22 +29,22 @@ export default function Home({ data })  {
       </Box>    
       <Box
         sx={{
-          bg: 'secondary',
-          p: rhythm(1),
+          bg: 'secondary',          
           width: '100%',   
 
         }}
       >
         <div
           sx={{
-            maxWidth: [rhythm(30)],
+            maxWidth: [rhythm(27)],            
             mx: 'auto', 
+            p: rhythm(1),
           }}
         >
           <Grid> 
             <h2 sx={{ }}>Featured Posts</h2>
             <ul
-              sx={{         
+              sx={{                      
                 listStyle: 'none',
                 display: 'grid',              
                 gridTemplateColumns: [                                    
@@ -77,7 +77,7 @@ export default function Home({ data })  {
                       {post.node.title}
                     </Link>
                   </h3>     
-                  <small sx={{ fontWeight: 'bold', fontStyle: 'italic',  }}>Blog</small>                                       
+                  <small sx={{ fontWeight: 'bold', fontStyle: 'italic', fontFamily: "Open Sans",  }}>Blog</small>                                       
                   <p
                     sx={{
                       m: 0,
@@ -91,11 +91,13 @@ export default function Home({ data })  {
                       <small
                         sx={{ 
                           marginRight: 2,                          
-                          fontStyle: 'italic', 
+                          fontSize: 1,
+                          fontWeight: 'bold', 
+                          fontFamily: "Open Sans",
                           borderRadius: "25px",
                           border: "2px solid icon",
                           color: 'white', 
-                          display: 'inline-block', 
+                          display: 'inline-block',                           
                           bg:'icon',                         
                           px: rhythm(1/4),
                           textTransform: 'capitalize',
@@ -145,7 +147,9 @@ export default function Home({ data })  {
                       <small
                         sx={{ 
                           marginRight: 2,                          
-                          fontStyle: 'italic', 
+                          fontSize: 1,
+                          fontWeight: 'bold', 
+                          fontFamily: "Open Sans",
                           borderRadius: "25px",
                           border: "2px solid icon",
                           color: 'white', 

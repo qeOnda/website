@@ -13,7 +13,7 @@ export default function Projects({ data })  {
     <Layout>
 	    <Grid	    	
 	    	sx={{	    	
-	    		maxWidth: [rhythm(30)],
+	    		maxWidth: [rhythm(27)],
 	    		mx: 'auto',
 	    		p:rhythm(1), 	          	
 	    	}}
@@ -54,8 +54,7 @@ export default function Projects({ data })  {
 			          }}>
 			          {post.node.title}
 			        </Link>
-			      </h2>
-			      <small sx={{ fontWeight: 'bold' }}>{post.node.date}</small>
+			      </h2>			     
 			      <p
 			        sx={{
 			          m: 0,
@@ -67,7 +66,9 @@ export default function Projects({ data })  {
                       <small
                         sx={{ 
                           marginRight: 2,                          
-                          fontStyle: 'italic', 
+                          fontSize: 1,
+                          fontWeight: 'bold', 
+                          fontFamily: "Open Sans",
                           borderRadius: "25px",
                           border: "2px solid icon",
                           color: 'white', 
@@ -121,3 +122,5 @@ export const pageQuery = graphql`
 	    }
 	}
 `
+
+//<small sx={{ fontWeight: 'bold' }}>{post.node.date}</small>

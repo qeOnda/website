@@ -14,7 +14,7 @@ export default function About({ data })  {
     <Layout>
 	    <Box	    	
 	    	sx={{	    	
-	    		maxWidth: [rhythm(30)],
+	    		maxWidth: [rhythm(27)],
 	    		mx: 'auto',
 	    		p:rhythm(1),	    		
 	    		display: 'flex',

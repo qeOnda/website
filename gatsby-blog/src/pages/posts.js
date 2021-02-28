@@ -13,7 +13,7 @@ export default function Posts({ data })  {
     <Layout>
 	    <Grid	    	
 	    	sx={{	    	
-	    		maxWidth: [rhythm(30)],
+	    		maxWidth: [rhythm(27)],
 	    		mx: 'auto',
 	    		p:rhythm(1)       	
 	    	}}
@@ -63,7 +63,9 @@ export default function Posts({ data })  {
                       <small
                         sx={{ 
                           marginRight: 2,                          
-                          fontStyle: 'italic', 
+                          fontSize: 1,
+                          fontWeight: 'bold', 
+                          fontFamily: "Open Sans",
                           borderRadius: "25px",
                           border: "2px solid icon",
                           color: 'white', 
