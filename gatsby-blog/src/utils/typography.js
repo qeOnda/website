@@ -14,10 +14,10 @@ sutroTheme.googleFonts = [
 ]
 sutroTheme.overrideThemeStyles = () => ({
   'a': {
-    color: "#f9b339",    
+    	color: "#f9b339",    
     },
    'ul,ol': {
-    marginLeft: rhythm(1.2),
+    	marginLeft: rhythm(1.2),
     },
 })
 
@@ -25,3 +25,16 @@ const typography = new Typography(sutroTheme)
 
 export default typography
 export const rhythm = typography.rhythm
+
+
+// 'a': {
+//     color: "black",    
+//     textDecoration: 'underline',
+//     textDecorationColor: "#f9b339",	   
+//     textDecorationThickness: '20%',
+//     },
+//    'a:hover': {
+// 	    backgroundColor: "#f9b339",
+// 	    textDecoration: 'none',	    
+// 	    color: "white",    
+// 	}, 

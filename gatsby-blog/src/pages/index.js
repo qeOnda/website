@@ -100,8 +100,7 @@ export default function Home({ data })  {
                           px: rhythm(1/4),
                           textTransform: 'capitalize',
                           ':hover,:focus': {
-                            color: 'background',
-                            textDecoration: 'underline', 
+                            color: 'background',                             
                             textTransform: 'capitalize'                      
                           }
                         }}
@@ -155,8 +154,7 @@ export default function Home({ data })  {
                           px: rhythm(1/4),
                           textTransform: 'capitalize',
                           ':hover,:focus': {
-                            color: 'background',
-                            textDecoration: 'underline', 
+                            color: 'background',                            
                             textTransform: 'capitalize'                      
                           }
                         }}

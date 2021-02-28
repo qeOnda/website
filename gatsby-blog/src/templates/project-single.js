@@ -26,7 +26,20 @@ export default function projectSingle({ data }) {
         <Reactmarkdown 
           source={data.strapiProject.content}
           renderers={{ code: CodeBlock }}            
-          sx={{ paddingTop: 2 }}
+          sx={{
+            paddingTop: 2,                        
+            'a': {
+                color: "black",    
+                textDecoration: 'underline',
+                textDecorationColor: "#f9b339",     
+                textDecorationThickness: '20%',
+                },
+               'a:hover': {
+                 backgroundColor: "#f9b339",
+                 textDecoration: 'none',     
+                 color: "white",    
+             },           
+          }}
         />  
         {data.strapiProject.categoricals.map(tag => (
           <Link to={`/${tag.name}`}>
@@ -42,8 +55,7 @@ export default function projectSingle({ data }) {
                 px: rhythm(1/4),
                 textTransform: 'capitalize',
                 ':hover,:focus': {
-                  color: 'background',
-                  textDecoration: 'underline', 
+                  color: 'background',                  
                   textTransform: 'capitalize'                      
                 }
               }}
