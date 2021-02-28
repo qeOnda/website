@@ -31,8 +31,8 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {        
-        apiURL: process.env.DEPLOY_URL
-        // apiURL: process.env.NODE_ENV
+        // apiURL: process.env.DEPLOY_URL
+        apiURL: process.env.NODE_ENV
           ? "https://radiant-badlands-82914.herokuapp.com"
           : `http://localhost:1337`,
         contentTypes: [`blog`, `categorical`, `project`, `about`],
