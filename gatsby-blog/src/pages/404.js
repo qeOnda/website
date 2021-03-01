@@ -15,14 +15,12 @@ const NotFoundPage = () => {
         sx={{       
           maxWidth: [rhythm(27)],
           mx: 'auto', 
-          p: rhythm(1),      
+          p: rhythm(1),          
         }}
       >
         <h1>Page not found</h1>
-        <p>
-          Hmmm something went wrong.
-          <Link to="/">Go home</Link>.
-        </p>
+        <p>Hmmm something went wrong. <Link to="/">Go home</Link>.</p>
+        
       </Box>
     </Layout>  
   )

@@ -6,6 +6,8 @@ import Layout from '../components/Layout'
 import Styled from '@emotion/styled'
 import Img from 'gatsby-image'
 import { rhythm } from '../utils/typography'
+import Reactmarkdown from 'react-markdown'
+import CodeBlock from '../components/CodeBlock'
 
 import { jsx, Box, Grid } from 'theme-ui'
 
@@ -43,7 +45,24 @@ export default function About({ data })  {
 		    		marginLeft: [0, rhythm(1)]
 		    	}}
 		    >
-		    	<p>{data.strapiAbout.bio}</p>
+		    	<Reactmarkdown 
+		          source={data.strapiAbout.bio}
+		          renderers={{ code: CodeBlock }}            
+		          sx={{ 
+		            paddingTop: 2,
+		            'a': {
+		                color: "black",    
+		                textDecoration: 'underline',
+		                textDecorationColor: "#f9b339",     
+		                textDecorationThickness: '20%',
+		                },
+		               'a:hover': {
+		                 backgroundColor: "#f9b339",
+		                 textDecoration: 'none',     
+		                 color: "white",    
+		             }, 
+		          }}
+		        />		    	
 		    </div>
 		   	<div
 		   		sx={{

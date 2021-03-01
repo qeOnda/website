@@ -20,8 +20,7 @@ export default function Footer() {
 				maxWidth: [rhythm(27)],
 				mx: 'auto', 
 				textAlign: 'center', 
-				p: rhythm(1)
-				
+				p: rhythm(1),				
 			}}
 		>
 			<div				

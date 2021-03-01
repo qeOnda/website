@@ -94,22 +94,27 @@ export default function Posts({ data })  {
 
 export const pageQ = graphql`  
   query PostsQuery {
-    allStrapiBlog {
-      edges {
-        node {
-          id
-          title
-          date
-          slug
-          content
-          description 
-          categoricals {
-			name
-			id
-		}         
-        }
-      }
-    }
+    allStrapiBlog (
+	    sort: {
+				fields: [date]
+	      order: DESC
+	  	}
+	  ) {
+		  edges {
+		    node {
+		      id
+	          title
+	          date
+	          slug
+	          content
+	          description 
+	          categoricals {
+				name
+				id
+			}
+		    }
+		  }
+	} 
   }
 `
 

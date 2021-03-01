@@ -8,24 +8,7 @@ module.exports = {
       options: {
         trackingId: "\u0018",
       },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-          resolve: 'gatsby-remark-emoji', // <-- this adds emoji
-          options: {
-            // default emojiConversion --> shortnameToUnicode
-            emojiConversion: 'shortnameToUnicode',
-            // when true, matches ASCII characters (in unicodeToImage and shortnameToImage)
-            // e.g. ;) --> 😉
-            ascii: false,
-          }
-        },
-        ]
-      }
-    },
+    },    
     "gatsby-plugin-sharp",
     "gatsby-plugin-fontawesome-css",
     {

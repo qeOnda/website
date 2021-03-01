@@ -104,15 +104,7 @@ export default function Posts({ data })  {
 
 export const query = graphql`
   query TagList($name: String!) {
-      allStrapiBlog (filter: {categoricals: {elemMatch: {name: {eq: $name}}}}) {
-    edges {
-      node {
-        title
-        description
-        slug       
-      }
-    }
-  } allStrapiProject(filter: {categoricals: {elemMatch: {name: {eq: $name}}}}) {
+    allStrapiProject(filter: {categoricals: {elemMatch: {name: {eq: $name}}}}) {
     edges {
       node {
         title
@@ -123,63 +115,18 @@ export const query = graphql`
   } strapiCategorical(name: {eq: $name}) {
     name
   }
+  allStrapiBlog (
+    filter: {categoricals: {elemMatch: {name: {eq: $name}}}}
+    sort: {fields: [date] order: DESC}
+  ) 
+  {         
+    edges {
+      node {
+        title              
+        slug              
+        description               
+      }
+    }
+  }
 } 
 `
-
-
-
- // {data.allStrapiBlog.edges.map(post => (
- //        <li key={post.node.id}>          
- //              <h2
- //                sx={{
- //                  m: 0,
- //                }}>
-                
- //                <Link to={`/posts/${post.node.slug}`}
- //                  sx={{
- //                    color: 'inherit',
- //                    textDecoration: 'none',
- //                    ':hover,:focus': {
- //                      color: 'accent',
- //                      textDecoration: 'underline',
- //                    }
- //                  }}>
- //                  {post.node.title}
- //                </Link>
- //              </h2>              
- //              <p
- //                sx={{
- //                  m: 0,
- //                }}>
- //                {post.node.description}
- //              </p>
- //            </li>
- //          ))}
- //      {data.allStrapiProject.edges.map(post => (
- //        <li key={post.node.id}>          
- //              <h2
- //                sx={{
- //                  m: 0,
- //                }}>
-                
- //                <Link to={`/posts/${post.node.slug}`}
- //                  sx={{
- //                    color: 'inherit',
- //                    textDecoration: 'none',
- //                    ':hover,:focus': {
- //                      color: 'accent',
- //                      textDecoration: 'underline',
- //                    }
- //                  }}>
- //                  {post.node.title}
- //                </Link>
- //              </h2>              
- //              <p
- //                sx={{
- //                  m: 0,
- //                }}>
- //                {post.node.description}
- //              </p>
- //            </li>
- //          ))}
-
