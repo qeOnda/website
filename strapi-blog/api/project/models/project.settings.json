@@ -45,8 +45,8 @@
       "required": false
     },
     "categoricals": {
-      "collection": "categorical",
-      "via": "projects"
+      "via": "projects",
+      "collection": "categorical"
     }
   }
 }

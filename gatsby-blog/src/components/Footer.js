@@ -42,10 +42,10 @@ export default function Footer() {
 				<a href="https://github.com/qeOnda" target="_blank" rel="noopener noreferrer">
 					<FontAwesomeIcon icon={faGithub} size="" sx={{color: "icon", ":hover": {color: 'accent'}}} />		
 				</a>
-				<a href="https://medium.com/" target="_blank" rel="noopener noreferrer">
+				<a href="https://ssmay.medium.com/" target="_blank" rel="noopener noreferrer">
 					<FontAwesomeIcon icon={faMedium} size="" sx={{marginLeft: rhythm(1), color: "icon", ":hover": {color: 'accent'}}}/>			    
 				</a>
-				<a href="" target="_blank" rel="noopener noreferrer">
+				<a href="mailto: ssmaydev@gmail.com" target="_blank" rel="noopener noreferrer">
 					<FontAwesomeIcon icon={faEnvelopeSquare} size="" sx={{marginLeft: rhythm(1), color: "icon", ":hover": {color: 'accent'}}}/>		    	
 				</a>
 			</div>	

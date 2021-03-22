@@ -4,176 +4,182 @@ import * as React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
-import FeaturedPosts from '../components/FeaturedPosts'
 import styled from "@emotion/styled"
 import { jsx, Box, Grid } from 'theme-ui'
 import { rhythm } from '../utils/typography'
+import { Helmet } from "react-helmet"
 
 
 export default function Home({ data })  {
   return (
-    <Layout>	
-      <Box
-        sx={{          
-          maxWidth: [rhythm(27)],
-          mx: 'auto', 
-          p: rhythm(1),       
-          height: '100vh',  
-          paddingTop: ['10%', rhythm(0.5), '10%'],
-          position: 'relative',                    
-        }}
-      >      
-        <Hero                 
-          hero={data.strapiAbout.hero}
-        />                
-      </Box>    
-      <Box
-        sx={{
-          bg: 'secondary',          
-          width: '100%',   
-
-        }}
-      >
-        <div
-          sx={{
-            maxWidth: [rhythm(27)],            
+    <div className="application">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Sean May</title>
+        <link rel="canonical" href="http://seanmay.dev" />
+      </Helmet>  
+      <Layout>	
+        <Box
+          sx={{          
+            maxWidth: [rhythm(27)],
             mx: 'auto', 
-            p: rhythm(1),
+            p: rhythm(1),                 
+          }}
+        >      
+          <Hero                 
+            hero={data.strapiAbout.hero}
+          />                
+        </Box>    
+        <Box
+          sx={{
+            bg: 'secondary',          
+            width: "100vw",
+            position: "relative",
+            left: "calc(-50vw + 50%)", 
+
           }}
         >
-          <Grid> 
-            <h2 sx={{ }}>Featured Posts</h2>
-            <ul
-              sx={{                      
-                listStyle: 'none',
-                display: 'grid',              
-                gridTemplateColumns: [                                    
-                  'repeat(1, minmax(2fr))',
-                  'repeat(2, minmax(100px, 1fr))',
-                ],                
-                m: 0,
-                px: 3,
-                py: 4,          
-                gridGap: 3,        
-              }}>
-              {data.allStrapiBlog.edges.map(post => (
-                <li key={post.node.id}
-                  sx={{
+          <div
+            sx={{
+              maxWidth: [rhythm(27)],            
+              mx: 'auto', 
+              p: rhythm(1),
+            }}
+          >
+            <Grid> 
+              <h2 sx={{ }}>Featured Posts</h2>
+              <ul
+                sx={{                      
+                  listStyle: 'none',
+                  display: 'grid',              
+                  gridTemplateColumns: [                                    
+                    'repeat(1, minmax(2fr))',
+                    'repeat(2, minmax(100px, 1fr))',
+                  ],                
+                  m: 0,
+                  px: 3,
+                  py: 4,          
+                  gridGap: 3,        
+                }}>
+                {data.allStrapiBlog.edges.map(post => (
+                  <li key={post.node.id}
+                    sx={{
 
-                  }}>
-                  <h3
-                    sx={{
-                      m: 0,
                     }}>
-                    <Link to={`/posts/${post.node.slug}`}
+                    <h3
                       sx={{
-                        color: 'inherit',
-                        textDecoration: 'none',
-                        ':hover,:focus': {
-                          color: 'accent',
-                          textDecoration: 'underline',                        
-                        }
+                        m: 0,
                       }}>
-                      {post.node.title}
-                    </Link>
-                  </h3>     
-                  <small sx={{ fontWeight: 'bold', fontStyle: 'italic', fontFamily: "Open Sans",  }}>Blog</small>                                       
-                  <p
-                    sx={{
-                      m: 0,
-                      textAlign: 'justify',
-                      textJustify: 'inter-word'
-                    }}>
-                    {post.node.description}
-                  </p>   
-                  {post.node.categoricals.map(tag => (
-                    <Link to={`${tag.name}`}>
-                      <small
-                        sx={{ 
-                          marginRight: 2,                          
-                          fontSize: 1,
-                          fontWeight: 'bold', 
-                          fontFamily: "Open Sans",
-                          borderRadius: "25px",
-                          border: "2px solid icon",
-                          color: 'white', 
-                          display: 'inline-block',                           
-                          bg:'icon',                         
-                          px: rhythm(1/4),
-                          textTransform: 'capitalize',
+                      <Link to={`/posts/${post.node.slug}`}
+                        sx={{
+                          color: 'inherit',
+                          textDecoration: 'none',
                           ':hover,:focus': {
-                            color: 'background',                             
-                            textTransform: 'capitalize'                      
+                            color: 'accent',
+                            textDecoration: 'underline',                        
                           }
-                        }}
-                      >
-                        {tag.name}                    
-                      </small>
-                    </Link>                    
-                  ))}               
-                </li>
-              ))}
-              {data.allStrapiProject.edges.map(post => (
-                <li key={post.node.id}
-                  sx={{
-                  }}>
-                  <h3
-                    sx={{
-                      m: 0,
-                    }}>
-                    <Link to={`/projects/${post.node.slug}`}
+                        }}>
+                        {post.node.title}
+                      </Link>
+                    </h3>     
+                    <small sx={{ fontWeight: 'bold', fontStyle: 'italic', fontFamily: "Open Sans",  }}>Blog</small>                                       
+                    <p
                       sx={{
-                        color: 'inherit',
-                        textDecoration: 'none',
-                        ':hover,:focus': {
-                          color: 'accent',
-                          textDecoration: 'underline',                        
-                        }
+                        m: 0,
+                        textAlign: 'justify',
+                        textJustify: 'inter-word'
                       }}>
-                      {post.node.title}
-                    </Link>
-                  </h3>  
-                  <small sx={{ fontWeight: 'bold', fontStyle: 'italic',  }}>Project</small>                                                                                         
-                  <p
+                      {post.node.description}
+                    </p>   
+                    {post.node.categoricals.map(tag => (
+                      <Link to={`${tag.name.toLowerCase()}`}>
+                        <small
+                          sx={{ 
+                            marginRight: 2,                          
+                            fontSize: 1,
+                            fontWeight: 'bold', 
+                            fontFamily: "Open Sans",
+                            borderRadius: "25px",
+                            border: "2px solid icon",
+                            color: 'white', 
+                            display: 'inline-block',                           
+                            bg:'icon',                         
+                            px: rhythm(1/4),
+                            textTransform: 'capitalize',
+                            ':hover,:focus': {
+                              color: 'background',                             
+                              textTransform: 'capitalize'                      
+                            }
+                          }}
+                        >
+                          {tag.name}                    
+                        </small>
+                      </Link>                    
+                    ))}               
+                  </li>
+                ))}
+                {data.allStrapiProject.edges.map(post => (
+                  <li key={post.node.id}
                     sx={{
-                      m: 0,
-                      textAlign: 'justify',
-                      textJustify: 'inter-word'
                     }}>
-                    {post.node.description}
-                  </p>
-                  {post.node.categoricals.map(tag => (
-                    <Link to={`${tag.name}`}>
-                      <small
-                        sx={{ 
-                          marginRight: 2,                          
-                          fontSize: 1,
-                          fontWeight: 'bold', 
-                          fontFamily: "Open Sans",
-                          borderRadius: "25px",
-                          border: "2px solid icon",
-                          color: 'white', 
-                          display: 'inline-block', 
-                          bg:'icon',                         
-                          px: rhythm(1/4),
-                          textTransform: 'capitalize',
+                    <h3
+                      sx={{
+                        m: 0,
+                      }}>
+                      <Link to={`/projects/${post.node.slug}`}
+                        sx={{
+                          color: 'inherit',
+                          textDecoration: 'none',
                           ':hover,:focus': {
-                            color: 'background',                            
-                            textTransform: 'capitalize'                      
+                            color: 'accent',
+                            textDecoration: 'underline',                        
                           }
-                        }}
-                      >
-                        {tag.name}
-                      </small>                     
-                    </Link>                  
-                  ))}                       
-                </li>
-              ))}            
-            </ul>
-          </Grid> 
-        </div>  
-      </Box>
-    </Layout>
+                        }}>
+                        {post.node.title}
+                      </Link>
+                    </h3>  
+                    <small sx={{ fontWeight: 'bold', fontStyle: 'italic',  }}>Project</small>                                                                                         
+                    <p
+                      sx={{
+                        m: 0,
+                        textAlign: 'justify',
+                        textJustify: 'inter-word'
+                      }}>
+                      {post.node.description}
+                    </p>
+                    {post.node.categoricals.map(tag => (
+                      <Link to={`${tag.name.toLowerCase()}`}>
+                        <small
+                          sx={{ 
+                            marginRight: 2,                          
+                            fontSize: 1,
+                            fontWeight: 'bold', 
+                            fontFamily: "Open Sans",
+                            borderRadius: "25px",
+                            border: "2px solid icon",
+                            color: 'white', 
+                            display: 'inline-block', 
+                            bg:'icon',                         
+                            px: rhythm(1/4),
+                            textTransform: 'capitalize',
+                            ':hover,:focus': {
+                              color: 'background',                            
+                              textTransform: 'capitalize'                      
+                            }
+                          }}
+                        >
+                          {tag.name}
+                        </small>                     
+                      </Link>                  
+                    ))}                       
+                  </li>
+                ))}            
+              </ul>
+            </Grid> 
+          </div>  
+        </Box>
+      </Layout>
+    </div>  
   )
 }
 

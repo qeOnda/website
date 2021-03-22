@@ -1,12 +1,14 @@
 /** @jsx jsx */
 
-
 import React from "react"
 import { css } from '@emotion/react'
 import { Link } from "gatsby"
 import { rhythm, scale } from "../utils/typography"
-
 import { Box, jsx } from 'theme-ui'
+
+import logo from '../images/favicon.png'
+
+
 
 const headerStyle = {
 	fontFamily: "Open Sans",
@@ -18,7 +20,7 @@ export default function Header() {
 	return (
 		<header		  
 		  sx={{
-		    maxWidth: [rhythm(27)],
+		    width: "100%",		   
           	mx: 'auto',           
 		    display: 'flex',
 		    alignItems: 'center',
@@ -29,11 +31,11 @@ export default function Header() {
 		    sx={{
 		      variant: 'styles.navlink',
 		      color: 'accent',
-		      // display: ["none", "inline-block" , "inline-block"],
-		    }}
-		    style={headerStyle}
+		      height: '1rem', 
+		      width: '1rem'		      
+		    }}		    
 		  >  
-		    Hello
+		    <img src={logo} alt="Logo" />
 		  </Link>
 		  <div sx={{ mx: 'auto' }} />		  
 		  <Link to='/about'

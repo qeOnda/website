@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "categoricals",
   "info": {
-    "name": "categorical"
+    "name": "categorical",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -19,9 +20,13 @@
       "dominant": true
     },
     "projects": {
-      "via": "categoricals",
       "collection": "project",
+      "via": "categoricals",
       "dominant": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
     }
   }
 }

@@ -5,11 +5,18 @@ import { Link } from "gatsby"
 import { jsx, Box } from 'theme-ui'
 import Layout from '../components/Layout'
 import { rhythm } from '../utils/typography'
+import { Helmet } from "react-helmet"
 
   
 // markup
 const NotFoundPage = () => {
   return (
+  <div className="application">
+      <Helmet>
+          <meta charSet="utf-8" />
+          <title>Sean May | 404</title>
+          <link rel="canonical" href="http://seanmay.dev/404" />
+        </Helmet>  
     <Layout>
       <Box
         sx={{       
@@ -23,6 +30,7 @@ const NotFoundPage = () => {
         
       </Box>
     </Layout>  
+  </div>  
   )
 }
 export default NotFoundPage

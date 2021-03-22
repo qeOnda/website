@@ -14,10 +14,21 @@ export default function Layout({ children }) {
   return (
     <Box 
       sx={{ 
-        paddingTop: rhythm(1),      
+        mx: "auto",
+        maxWidth: [rhythm(27)],
+        paddingTop: rhythm(1),
+        display: "flex",
+        minHeight: "100vh",
+        flexDirection: "column",      
       }}>    
       <Header />  
-      { children }
+      <Box
+        sx={{
+          flex: 1
+        }}
+      >
+        { children }
+      </Box>
       <Footer />  
     </Box>       
   )
