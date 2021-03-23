@@ -46,7 +46,7 @@ export default function Posts({ data })  {
               m: 0,
                     px: 3,
                     py: 4,          
-                    gridGap: 3                      
+                    gridGap: rhythm(1),                      
             }}>
             {data.allStrapiProject.edges.map(post => (
               <li key={post.node.id}>          

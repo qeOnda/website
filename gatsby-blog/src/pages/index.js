@@ -59,13 +59,13 @@ export default function Home({ data })  {
                   m: 0,
                   px: 3,
                   py: 4,          
-                  gridGap: 3,        
+                  gridGap: rhythm(1),        
                 }}>
                 {data.allStrapiProject.edges.map(post => (
                   <li key={post.node.id}
                     sx={{
                     }}>
-                    <h3
+                    <h2
                       sx={{
                         m: 0,
                       }}>
@@ -80,7 +80,7 @@ export default function Home({ data })  {
                         }}>
                         {post.node.title}
                       </Link>
-                    </h3>  
+                    </h2>  
                     <small sx={{ fontWeight: 'bold', fontStyle: 'italic', fontFamily: "Open Sans"  }}>Project</small>                                                                                         
                     <p
                       sx={{
@@ -122,7 +122,7 @@ export default function Home({ data })  {
                     sx={{
 
                     }}>
-                    <h3
+                    <h2
                       sx={{
                         m: 0,
                       }}>
@@ -137,7 +137,7 @@ export default function Home({ data })  {
                         }}>
                         {post.node.title}
                       </Link>
-                    </h3>     
+                    </h2>     
                     <small sx={{ fontWeight: 'bold', fontStyle: 'italic', fontFamily: "Open Sans",  }}>Blog</small>                                       
                     <p
                       sx={{
