@@ -69,18 +69,19 @@ exports.createPages = ({ actions, graphql }) => {
         edges {
           node {
             name
+            slug
           }
         }
       }
     }
     `).then(result => {
-    // Create pages for each article.
+    // Create pages for each tag.
     result.data.allStrapiCategorical.edges.forEach(({ node }) => {      
       createPage({
-        path: `${node.name.toLowerCase()}`,
+        path: `${node.slug}`,
         component: path.resolve(`src/templates/tags.js`),
         context: {
-          name: node.name,
+          slug: node.slug,
         },
       })
     })

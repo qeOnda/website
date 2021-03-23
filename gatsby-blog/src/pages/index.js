@@ -61,6 +61,62 @@ export default function Home({ data })  {
                   py: 4,          
                   gridGap: 3,        
                 }}>
+                {data.allStrapiProject.edges.map(post => (
+                  <li key={post.node.id}
+                    sx={{
+                    }}>
+                    <h3
+                      sx={{
+                        m: 0,
+                      }}>
+                      <Link to={`/projects/${post.node.slug}`}
+                        sx={{
+                          color: 'inherit',
+                          textDecoration: 'none',
+                          ':hover,:focus': {
+                            color: 'accent',
+                            textDecoration: 'underline',                        
+                          }
+                        }}>
+                        {post.node.title}
+                      </Link>
+                    </h3>  
+                    <small sx={{ fontWeight: 'bold', fontStyle: 'italic', fontFamily: "Open Sans"  }}>Project</small>                                                                                         
+                    <p
+                      sx={{
+                        m: 0,
+                        textAlign: 'justify',
+                        textJustify: 'inter-word'
+                      }}>
+                      {post.node.description}
+                    </p>
+                    {post.node.categoricals.map(tag => (
+                      <Link to={`${tag.slug}`}>
+                        <small
+                          sx={{ 
+                            marginRight: 2,                          
+                            fontSize: 1,
+                            fontWeight: 'bold', 
+                            fontFamily: "Open Sans",
+                            borderRadius: "25px",
+                            border: "2px solid icon",
+                            color: 'white', 
+                            display: 'inline-block', 
+                            bg:'icon',                         
+                            px: rhythm(1/4),
+                            textTransform: 'capitalize',
+                            ':hover,:focus': {
+                              color: 'background',                            
+                              textTransform: 'capitalize'                      
+                            }
+                          }}
+                        >
+                          {tag.name}
+                        </small>                     
+                      </Link>                  
+                    ))}                       
+                  </li>
+                ))}            
                 {data.allStrapiBlog.edges.map(post => (
                   <li key={post.node.id}
                     sx={{
@@ -92,7 +148,7 @@ export default function Home({ data })  {
                       {post.node.description}
                     </p>   
                     {post.node.categoricals.map(tag => (
-                      <Link to={`${tag.name.toLowerCase()}`}>
+                      <Link to={`${tag.slug}`}>
                         <small
                           sx={{ 
                             marginRight: 2,                          
@@ -118,62 +174,6 @@ export default function Home({ data })  {
                     ))}               
                   </li>
                 ))}
-                {data.allStrapiProject.edges.map(post => (
-                  <li key={post.node.id}
-                    sx={{
-                    }}>
-                    <h3
-                      sx={{
-                        m: 0,
-                      }}>
-                      <Link to={`/projects/${post.node.slug}`}
-                        sx={{
-                          color: 'inherit',
-                          textDecoration: 'none',
-                          ':hover,:focus': {
-                            color: 'accent',
-                            textDecoration: 'underline',                        
-                          }
-                        }}>
-                        {post.node.title}
-                      </Link>
-                    </h3>  
-                    <small sx={{ fontWeight: 'bold', fontStyle: 'italic',  }}>Project</small>                                                                                         
-                    <p
-                      sx={{
-                        m: 0,
-                        textAlign: 'justify',
-                        textJustify: 'inter-word'
-                      }}>
-                      {post.node.description}
-                    </p>
-                    {post.node.categoricals.map(tag => (
-                      <Link to={`${tag.name.toLowerCase()}`}>
-                        <small
-                          sx={{ 
-                            marginRight: 2,                          
-                            fontSize: 1,
-                            fontWeight: 'bold', 
-                            fontFamily: "Open Sans",
-                            borderRadius: "25px",
-                            border: "2px solid icon",
-                            color: 'white', 
-                            display: 'inline-block', 
-                            bg:'icon',                         
-                            px: rhythm(1/4),
-                            textTransform: 'capitalize',
-                            ':hover,:focus': {
-                              color: 'background',                            
-                              textTransform: 'capitalize'                      
-                            }
-                          }}
-                        >
-                          {tag.name}
-                        </small>                     
-                      </Link>                  
-                    ))}                       
-                  </li>
-                ))}            
               </ul>
             </Grid> 
           </div>  
@@ -197,6 +197,7 @@ export const pageQuery = graphql`
           slug        
           categoricals {
             name
+            slug
             id
           }
         }
@@ -213,6 +214,7 @@ export const pageQuery = graphql`
           slug
           categoricals {
             name
+            slug
             id
           }
         }

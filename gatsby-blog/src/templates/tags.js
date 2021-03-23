@@ -18,7 +18,7 @@ export default function Posts({ data })  {
       <Helmet>
           <meta charSet="utf-8" />
           <title>Sean May | {data.strapiCategorical.name}</title>
-          <link rel="canonical" href="http://seanmay.dev/{data.strapiCategorical.name}"  />
+          <link rel="canonical" href="http://seanmay.dev/{data.strapiCategorical.slug}"  />
         </Helmet>  
       <Layout>
         <Grid       
@@ -113,8 +113,8 @@ export default function Posts({ data })  {
 
 
 export const query = graphql`
-  query TagList($name: String!) {
-    allStrapiProject(filter: {categoricals: {elemMatch: {name: {eq: $name}}}}) {
+  query TagList($slug: String!) {
+    allStrapiProject(filter: {categoricals: {elemMatch: {slug: {eq: $slug}}}}) {
     edges {
       node {
         title
@@ -122,11 +122,12 @@ export const query = graphql`
         slug
       }
     }
-  } strapiCategorical(name: {eq: $name}) {
+  } strapiCategorical(slug: {eq: $slug}) {
     name
+    slug
   }
   allStrapiBlog (
-    filter: {categoricals: {elemMatch: {name: {eq: $name}}}}
+    filter: {categoricals: {elemMatch: {slug: {eq: $slug}}}}
     sort: {fields: [date] order: DESC}
   ) 
   {         

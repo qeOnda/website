@@ -74,7 +74,7 @@ export default function Projects({ data })  {
 				        {post.node.description}
 				      </p>
 				      {post.node.categoricals.map(tag => (
-	                    <Link to={`/${tag.name.toLowerCase()}`}>
+	                    <Link to={`/${tag.slug}`}>
 	                      <small
 	                        sx={{ 
 	                          marginRight: 2,                          
@@ -127,6 +127,7 @@ export const pageQuery = graphql`
 					categoricals {
 						name
 						id
+						slug
 					}
 					image {
 						extension

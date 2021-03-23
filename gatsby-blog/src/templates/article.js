@@ -48,7 +48,7 @@ export default function Article({ data }) {
             }}
           />   
           {data.strapiBlog.categoricals.map(tag => (
-            <Link to={`/${tag.name.toLowerCase()}`}>
+            <Link to={`/${tag.slug}`}>
               <small
                 sx={{ 
                   marginRight: 2,                          
@@ -89,6 +89,7 @@ export const query = graphql`
       slug
       categoricals {
         name
+        slug
       }
     }
   }

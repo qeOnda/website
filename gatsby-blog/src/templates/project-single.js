@@ -52,7 +52,7 @@ export default function projectSingle({ data }) {
             }}
           />  
           {data.strapiProject.categoricals.map(tag => (
-            <Link to={`/${tag.name.toLowerCase()}`}>
+            <Link to={`/${tag.slug}`}>
               <small
                 sx={{ 
                   marginRight: 2,                          
@@ -94,6 +94,7 @@ export const query = graphql`
       slug
       categoricals {
         name
+        slug
       }
       image {
         extension
